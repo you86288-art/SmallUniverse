@@ -4,14 +4,13 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
   <meta name="theme-color" content="#03080d">
-  <meta name="description" content="성격이 아니라, 신경계였어요. 뇌·척수·말초신경이 하나로 이어진 몸을 35초 동안 직접 만나보세요. 안전모드 연구소 · BIUM">
+  <meta name="description" content="고장 난 게 아니라, 생존모드였어요. 불안·두근거림·불면이 하나로 이어진 신경계의 신호임을 35초 동안 직접 만나보세요. 안전모드 연구소 · BIUM">
   <meta property="og:type" content="website">
-  <meta property="og:title" content="성격이 아니라, 신경계였어요 — 안전모드 연구소">
+  <meta property="og:title" content="고장 난 게 아니라, 생존모드였어요 — 안전모드 연구소">
   <meta property="og:description" content="하나로 연결된 몸을 만나는 35초 인터랙티브 체험. 손끝으로 신호를 보내보세요.">
   <meta name="twitter:card" content="summary_large_image">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@300;400&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
   <title>안전모드 연구소 — 하나로 연결된 나</title>
   <style>
 :root{color-scheme:dark;--ink:#03080d;--pearl:#e2e5df;--muted:#899796;--platinum:#ddcba8;--line:rgba(206,224,216,.18)}
@@ -164,6 +163,41 @@ h1 em{font-style:normal;color:#e6d6b3}
  #whole-choices{flex:1;border:1px solid rgba(230,214,179,.35)}
  .points-open{width:100%;justify-content:center}
 }
+/* Phone: give the body the room — compact copy above, CTA tucked above the controls */
+@media(max-width:700px){
+ #experience[data-state=exploring] .revelation .eyebrow,#experience[data-state=exploring] #experience[data-mode=whole] .reveal-copy{display:none}
+ #experience[data-mode=whole] .revelation{top:136px}
+ #experience[data-mode=whole] .revelation .eyebrow{display:none}
+ #experience[data-mode=whole] .statement{font-size:21px;line-height:1.38;margin:0}
+ #experience[data-mode=whole] .reveal-copy{display:none}
+ #experience[data-mode=strain] .revelation{top:168px}
+ #experience[data-mode=strain] .revelation .eyebrow{display:none}
+ #experience[data-mode=strain] .statement{font-size:21px;margin:0 0 4px}
+ #experience[data-mode=strain] .statement em{display:inline;margin-left:.28em}
+ .cta{bottom:calc(max(20px,env(safe-area-inset-bottom)) + 52px);gap:0}
+ .cta-main{min-height:46px;padding:10px 16px}
+ .cta-main small{display:none}
+ .cta-links a{min-height:30px;padding:2px 0;font-size:11px}
+}
+@media(min-width:701px){.intro{max-width:min(700px,54vw)}#experience[data-mode=whole] .statement{font-size:clamp(30px,3vw,46px)}}
+#experience[data-mode=whole] #intro-eyebrow{font-size:13px;letter-spacing:.14em;color:#d9c9a6}
+#experience[data-mode=whole] #intro-eyebrow .tiny-line{background:#a8946c}
+@media(max-width:700px){#experience[data-mode=whole] #intro-eyebrow{font-size:12px}.intro-copy{line-height:1.8}}
+/* ── Type system E · Premium app (Pretendard) ───────────────── */
+body,button,.intro-copy,.reveal-copy,.cta-main,.start,.brand-sub,.quiet-link,.experience-tabs button,.point-card,.pc-body,.pc-row,.anatomy-key,.rhythm-key,.touch-instruction,dialog{font-family:"Pretendard Variable",Pretendard,-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Noto Sans KR",sans-serif!important}
+h1,.statement,.point-card h3,#explanation h2{font-family:"Pretendard Variable",Pretendard,-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Noto Sans KR",sans-serif!important;font-weight:640!important;letter-spacing:-.045em!important}
+h1{line-height:1.2!important}.statement{line-height:1.3!important}
+h1 em,.statement em{font-weight:640!important}
+.point-card h3{font-weight:620!important;letter-spacing:-.035em!important}
+.start{font-weight:650!important;letter-spacing:-.02em!important}
+.cta-main{font-weight:600!important;letter-spacing:-.02em!important}
+.experience-tabs button{font-weight:500;letter-spacing:-.01em}
+.intro-copy{font-weight:400;letter-spacing:-.015em;color:#c9d2cd}
+.intro-copy b{font-weight:600;color:#f1ece0}
+.reveal-copy{letter-spacing:-.01em}
+#intro-eyebrow,.revelation .eyebrow{font-family:"Pretendard Variable",Pretendard,-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Noto Sans KR",sans-serif!important;font-weight:600;letter-spacing:.22em!important}
+#experience[data-mode=whole] #intro-eyebrow{font-size:11px!important}
+.pc-nerve,.pc-row span{font-weight:500}
 </style>
 </head>
 <body>
@@ -180,9 +214,9 @@ h1 em{font-style:normal;color:#e6d6b3}
     </header>
 
     <section class="intro" id="intro" aria-labelledby="intro-title">
-      <div class="eyebrow" id="intro-eyebrow">THE UNIVERSE WITHIN</div>
-      <h1 id="intro-title">성격이 아니라,<br><em>신경계였어요.</em></h1>
-      <p class="intro-copy" id="intro-copy">따로따로인 것 같던 마음과 몸은<br><b>하나로 이어진 시스템</b>이에요. 그 연결을 만나는 35초.</p>
+      <div class="eyebrow" id="intro-eyebrow">나라는 작은 우주</div>
+      <h1 id="intro-title">고장 난 게 아니라,<br><em>생존모드였어요.</em></h1>
+      <p class="intro-copy" id="intro-copy">불안, 두근거림, 잠 못 드는 밤.<br>따로가 아니라 <b>하나로 이어진 신경계의 신호</b>예요.<br>그 연결을 만나는 35초.</p>
       <button class="start" id="start"><span>경험 시작하기</span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12h15m-6-6 6 6-6 6"/></svg></button>
       <button class="quiet-link" id="direct">연결망 바로 탐색하기 <span>↗</span></button>
       <p class="intro-note" id="intro-note">천천히 바라보세요. 마지막에는 당신의 손끝으로.</p>
@@ -410,12 +444,14 @@ const HOTSPOTS=[
   try:'맨발로 서서 발바닥 전체로 바닥을 천천히 눌러 디뎌 보세요.',trad:'한의학에서는 발바닥 앞쪽의 오목한 곳을 용천(湧泉)이라고 불러요.'}
 ];
 
+// Mobile: the final body fills the free space between the copy and the controls.
+const LAYOUT=(globalThis.BIUM_LAYOUT={d:null,cy:null,td:null,tcy:null});
 function cameraAt(time,width,height){
-  const mobile=width<=700,mid=!mobile&&width<=1000,fit=mobile?19:mid?11.5:height<570?10.8:9.2;
+  const mobile=width<=700,mid=!mobile&&width<=1000,fit=mobile?(LAYOUT.d??19):mid?11.5:height<570?10.8:9.2;
   const keys=[{t:0,d:.24,x:-.13,y:3.1,z:.4},{t:12,d:.43,x:-.1,y:3.085,z:.35},{t:30,d:1.72,x:0,y:3.075,z:.08},{t:40,d:2.42,x:0,y:2.90,z:0},{t:58,d:fit,x:0,y:.08,z:0},{t:70,d:fit,x:0,y:.08,z:0}];
   let k=0;while(k<keys.length-2&&time>keys[k+1].t)k++;
   const a=keys[k],b=keys[k+1],t=smooth((time-a.t)/(b.t-a.t));
-  return{d:Math.exp(mix(Math.log(a.d),Math.log(b.d),t)),x:mix(a.x,b.x,t),y:mix(a.y,b.y,t),z:mix(a.z,b.z,t),cx:width*(mobile?.5:mid?.75:.66),cy:height*(mobile?.55:.51),focal:height*.94};
+  return{d:Math.exp(mix(Math.log(a.d),Math.log(b.d),t)),x:mix(a.x,b.x,t),y:mix(a.y,b.y,t),z:mix(a.z,b.z,t),cx:width*(mobile?.5:mid?.75:.66),cy:mobile&&LAYOUT.cy!=null?LAYOUT.cy:height*(mobile?.55:.51),focal:height*.94};
 }
 
 class UniverseScene{
@@ -431,12 +467,61 @@ class UniverseScene{
     // Hotspots snap to the nearest node so their links follow real graph paths.
     this.hot=HOTSPOTS.map(h=>{const p={x:h.pos[0],y:h.pos[1],z:h.pos[2]};let best=0,bd=Infinity;for(const n of m.nodes){const d=length(n,p);if(d<bd){bd=d;best=n.id}}return{...h,p,node:best}});
     this.selected=-1;this.link=null;this.lift=0;this.liftTarget=0;this.lastClock=0;this.pointsAlpha=0;
+    this.galaxy=document.createElement('canvas');this.twinkles=[];this.meteor=null;
     this.baseCanvas=document.createElement('canvas');this.bloomA=document.createElement('canvas');this.bloomB=document.createElement('canvas');
     this.resize();
   }
   resize(width=this.canvas.clientWidth,height=this.canvas.clientHeight,dpr=globalThis.devicePixelRatio||1){
     this.width=width;this.height=height;this.dpr=Math.min(dpr,width<701?1.5:1.75);this.canvas.width=Math.round(width*this.dpr);this.canvas.height=Math.round(height*this.dpr);this.camera=cameraAt(this.time,width,height);
+    this.buildGalaxy();
     if(this.baseCanvas){this.baseCanvas.width=this.canvas.width;this.baseCanvas.height=this.canvas.height;this.bloomA.width=Math.max(1,Math.round(this.canvas.width/4));this.bloomA.height=Math.max(1,Math.round(this.canvas.height/4));this.bloomB.width=Math.max(1,Math.round(this.canvas.width/12));this.bloomB.height=Math.max(1,Math.round(this.canvas.height/12));this.baseCache=null}
+  }
+  // A static, pre-rendered Milky Way: nebula band, dust lanes, star field. Rebuilt only on resize.
+  buildGalaxy(){
+    if(!this.galaxy||this.width<2||this.height<2)return;
+    const s=Math.min(this.dpr,1.5),W=Math.round(this.width*s),H=Math.round(this.height*s),g=this.galaxy;g.width=W;g.height=H;
+    const c=g.getContext('2d'),rnd=random(),mobile=this.width<=700;
+    const bg=c.createLinearGradient(0,0,W,H);bg.addColorStop(0,'#02050a');bg.addColorStop(.5,'#040b12');bg.addColorStop(1,'#02060b');c.fillStyle=bg;c.fillRect(0,0,W,H);
+    // Band runs diagonally behind the body; the core sits behind the chest.
+    const cx=W*(mobile?.5:.64),cy=H*(mobile?.5:.47),ang=mobile?-1.05:-.42,ux=Math.cos(ang),uy=Math.sin(ang),L=Math.hypot(W,H)*.75,thick=Math.min(W,H)*(mobile?.42:.3);
+    const gauss=()=>{let u=0;for(let i=0;i<4;i++)u+=rnd();return(u-2)/2};
+    c.globalCompositeOperation='lighter';
+    const blob=(x,y,r,col,a)=>{const gr=c.createRadialGradient(x,y,0,x,y,r);gr.addColorStop(0,`rgba(${col},${a})`);gr.addColorStop(1,`rgba(${col},0)`);c.fillStyle=gr;c.fillRect(x-r,y-r,r*2,r*2)};
+    const palette=['64,128,136','58,104,128','112,92,150','150,110,160','196,168,120','90,150,140'];
+    for(let i=0;i<170;i++){
+      const t=(rnd()*2-1),off=gauss()*thick*.55,x=cx+ux*t*L-uy*off,y=cy+uy*t*L+ux*off,core=Math.exp(-t*t*5);
+      blob(x,y,(30+rnd()*120)*s*(1+core*.5),palette[Math.floor(rnd()*palette.length)],(.013+rnd()*.017)*(.6+core*.8));
+    }
+    blob(cx,cy,Math.min(W,H)*.36,'206,176,128',.035);blob(cx,cy,Math.min(W,H)*.12,'240,214,170',.03);
+    blob(W*(mobile?.15:.12),H*.22,Math.min(W,H)*.35,'90,70,140',.03);blob(W*.9,H*.85,Math.min(W,H)*.3,'40,110,120',.035);
+    // Dark dust lanes for depth.
+    c.globalCompositeOperation='source-over';
+    for(let i=0;i<26;i++){
+      const t=(rnd()*2-1)*.9,off=gauss()*thick*.12,x=cx+ux*t*L-uy*off,y=cy+uy*t*L+ux*off,r=(14+rnd()*50)*s;
+      const gr=c.createRadialGradient(x,y,0,x,y,r);gr.addColorStop(0,'rgba(2,5,9,.18)');gr.addColorStop(1,'rgba(2,5,9,0)');c.fillStyle=gr;c.fillRect(x-r,y-r,r*2,r*2);
+    }
+    // Stars: denser inside the band.
+    c.globalCompositeOperation='lighter';const n=Math.round(this.width*this.height/(mobile?260:420));this.twinkles=[];
+    for(let i=0;i<n;i++){
+      let x=rnd()*W,y=rnd()*H;const dx=x-cx,dy=y-cy,across=Math.abs(-uy*dx+ux*dy)/thick;
+      if(across>1&&rnd()<.55){const t=(rnd()*2-1),off=gauss()*thick*.5;x=cx+ux*t*L-uy*off;y=cy+uy*t*L+ux*off}
+      const r=(rnd()<.93?.3+rnd()*.5:.8+rnd()*.7)*s,a=.18+rnd()*.5,tint=rnd();
+      const col=tint<.15?'255,226,180':tint<.3?'190,220,255':'235,240,236';
+      c.fillStyle=`rgba(${col},${a})`;c.beginPath();c.arc(x,y,r,0,Math.PI*2);c.fill();
+      if(r>1.3*s){blob(x,y,r*4,col,.12);if(this.twinkles.length<90)this.twinkles.push({x:x/s,y:y/s,r:r/s,col,ph:rnd()*6.28,sp:.6+rnd()*1.6})}
+      else if(rnd()<.02&&this.twinkles.length<90)this.twinkles.push({x:x/s,y:y/s,r:r/s+.3,col,ph:rnd()*6.28,sp:.6+rnd()*1.6});
+    }
+    c.globalCompositeOperation='source-over';this.baseCache=null;
+  }
+  drawSky(){
+    const ctx=this.ctx,clock=this.clock;
+    if(!this.reduced)for(const t of this.twinkles){const a=Math.max(0,Math.sin(clock*t.sp+t.ph))**3*.85;if(a<.04)continue;this.glow(t.x,t.y,t.r*7,a*.55,t.col);ctx.fillStyle=`rgba(255,250,240,${a})`;ctx.fillRect(t.x-.6,t.y-.6,1.2,1.2)}
+    // An occasional meteor crossing the small universe.
+    if(this.reduced)return;
+    if(!this.meteor&&Math.random()<.0025){const fromLeft=Math.random()<.5;this.meteor={x:this.width*(fromLeft?.1+Math.random()*.4:.5+Math.random()*.4),y:this.height*(.05+Math.random()*.3),vx:(fromLeft?1:-1)*(260+Math.random()*160),vy:120+Math.random()*90,start:clock}}
+    const m=this.meteor;if(m){const age=clock-m.start;if(age>1.1||age<0){this.meteor=null;return}
+      const x=m.x+m.vx*age,y=m.y+m.vy*age,a=Math.sin(age/1.1*Math.PI)*.8,gr=ctx.createLinearGradient(x,y,x-m.vx*.22,y-m.vy*.22);
+      gr.addColorStop(0,`rgba(255,244,220,${a})`);gr.addColorStop(1,'rgba(255,244,220,0)');ctx.strokeStyle=gr;ctx.lineWidth=1.2;ctx.beginPath();ctx.moveTo(x,y);ctx.lineTo(x-m.vx*.22,y-m.vy*.22);ctx.stroke();}
   }
   targetNode(to){return to==='root'?this.model.root:typeof to==='string'?this.model.regions[to]:this.hot[to].node}
   select(i){
@@ -462,7 +547,7 @@ class UniverseScene{
       if(end){ctx.globalCompositeOperation='source-over';ctx.beginPath();ctx.arc(end.x,end.y,10+Math.sin(clock*3)*1.5,0,Math.PI*2);ctx.strokeStyle=`rgba(143,199,184,${.8*a})`;ctx.lineWidth=1.3;ctx.setLineDash([3,3]);ctx.stroke();ctx.setLineDash([])}
     }
     ctx.globalCompositeOperation='source-over';
-    ctx.font=`600 ${labels?10:9}px "Noto Sans KR",Arial,sans-serif`;ctx.textAlign='center';ctx.textBaseline='middle';
+    ctx.font=`600 ${labels?10:9}px 'Pretendard Variable',Pretendard,sans-serif`;ctx.textAlign='center';ctx.textBaseline='middle';
     this.hot.forEach((h,i)=>{
       const q=this.project(h.p);if(!q)return;const sel=i===this.selected,dim=this.selected>=0&&!sel?.55:1;
       const pulse=this.reduced?0:(Math.sin(clock*2.2+i*.8)+1)/2,r=sel?10:labels?8:7.5;
@@ -471,7 +556,7 @@ class UniverseScene{
       ctx.beginPath();ctx.arc(q.x,q.y,r,0,Math.PI*2);ctx.fillStyle=sel?`rgba(255,244,218,${a})`:`rgba(230,214,179,${.92*a*dim})`;ctx.fill();
       ctx.fillStyle=`rgba(13,23,20,${a})`;ctx.fillText(String(i+1),q.x,q.y+.5);
       if(labels){
-        const left=h.pos[0]<0;ctx.save();ctx.textAlign=left?'right':'left';ctx.font='400 11px "Noto Sans KR",Arial,sans-serif';
+        const left=h.pos[0]<0;ctx.save();ctx.textAlign=left?'right':'left';ctx.font='400 11px "Pretendard Variable",Pretendard,sans-serif';
         ctx.shadowColor='rgba(3,8,13,.95)';ctx.shadowBlur=6;ctx.fillStyle=sel?`rgba(255,244,218,${a})`:`rgba(226,229,223,${.82*a*dim})`;
         ctx.fillText(h.short,q.x+(left?-(r+8):r+8),q.y);ctx.restore();
       }
@@ -531,10 +616,10 @@ class UniverseScene{
     if(this.baseCache?.key===cacheKey){ctx.save();ctx.setTransform(1,0,0,1,0,0);ctx.drawImage(this.baseCanvas,0,0);ctx.restore();pts=this.baseCache.points;}
     else{
     ctx.fillStyle='#03080d';ctx.fillRect(0,0,w,h);
-    const ambient=ctx.createRadialGradient(w*.64,h*.44,0,w*.64,h*.44,h*.67);ambient.addColorStop(0,'#0a1a1c');ambient.addColorStop(.6,'#061015');ambient.addColorStop(1,'#03080d');ctx.fillStyle=ambient;ctx.fillRect(0,0,w,h);
+    {const zoom=1+Math.max(0,Math.min(1,(9-this.camera.d)/9))*.18,gw=w*zoom,gh=h*zoom;ctx.save();ctx.globalAlpha=1;ctx.drawImage(this.galaxy,(w-gw)/2,(h-gh)/2,gw,gh);ctx.restore();}
     pts=this.model.nodes.map(n=>this.project(n));
     const trace=(points,stride=1)=>{let started=false;for(let i=0;i<points.length;i+=stride){const p=this.project(points[i]);if(!p||Math.abs(p.x)>w*12||Math.abs(p.y)>h*12){started=false;continue}if(!started){ctx.moveTo(p.x,p.y);started=true}else ctx.lineTo(p.x,p.y)}};
-    for(const outline of this.model.outlines){ctx.beginPath();trace(outline);ctx.closePath();const fill=ctx.createLinearGradient(w*.45,0,w*.8,h);fill.addColorStop(0,'rgba(175,197,185,.025)');fill.addColorStop(.7,'rgba(132,179,167,.015)');fill.addColorStop(1,'rgba(68,123,123,.026)');ctx.fillStyle=fill;ctx.fill();ctx.strokeStyle='rgba(158,188,182,.105)';ctx.lineWidth=.7;ctx.stroke();}
+    for(const outline of this.model.outlines){ctx.beginPath();trace(outline);ctx.closePath();const fill=ctx.createLinearGradient(w*.45,0,w*.8,h);fill.addColorStop(0,'rgba(175,197,185,.025)');fill.addColorStop(.7,'rgba(132,179,167,.015)');fill.addColorStop(1,'rgba(68,123,123,.026)');ctx.fillStyle=fill;ctx.fill();ctx.strokeStyle='rgba(178,206,198,.16)';ctx.lineWidth=.8;ctx.stroke();}
     for(const kind of ['tissue','cortex','nerve','spine']){
       ctx.beginPath();for(const fiber of this.model.fibers)if(fiber.kind===kind)trace(fiber.points,kind==='cortex'&&this.camera.d>5?3:1);
       ctx.strokeStyle=kind==='cortex'?'rgba(201,222,213,.25)':kind==='spine'?'rgba(240,223,184,.5)':kind==='tissue'?'rgba(141,180,168,.025)':'rgba(176,213,200,.17)';ctx.lineWidth=kind==='spine'?1.15:kind==='cortex'?.65:.7;ctx.stroke();
@@ -550,6 +635,7 @@ class UniverseScene{
     }ctx.fill();
     if(time>=58||time===7||this.reduced){const b=this.baseCanvas.getContext('2d');b.globalCompositeOperation='copy';b.drawImage(this.canvas,0,0);this.baseCache={key:cacheKey,points:pts};}
     }
+    this.drawSky();
     // Quiet spontaneous local signals, never a global neon flash.
     if(!this.reduced){for(let j=0;j<9;j++){
       const n=pts[(Math.floor(clock*.16)+j*101+91)%921];if(n&&n.x>-20&&n.x<w+20&&n.y>-20&&n.y<h+20){const alpha=(Math.sin(clock*(.55+j*.07)+j*2.3)+1)*.13;this.glow(n.x,n.y,clamp(5/n.depth,3,12),alpha)}}}
@@ -690,7 +776,7 @@ class StrainLayer{
         const small=s.width<=700;const offset=small?58:80;
         const endX=p.x+o.side*offset;
         c.beginPath();c.moveTo(p.x+o.side*10,p.y);c.lineTo(endX,p.y-8);c.strokeStyle=`rgba(${amber},.35)`;c.lineWidth=.6;c.stroke();
-        c.font=`${small?10:11}px Arial, sans-serif`;c.textAlign=o.side>0?'left':'right';c.fillStyle=`rgba(231,192,164,${strength*.95})`;
+        c.font=`500 ${small?10:11}px 'Pretendard Variable',Pretendard,Arial,sans-serif`;c.textAlign=o.side>0?'left':'right';c.fillStyle=`rgba(231,192,164,${strength*.95})`;
         c.fillText(o.label,endX+o.side*4,p.y-10);
       }
     }
@@ -741,8 +827,8 @@ if(scene){
     if(phase!==chapter){chapter=phase;$('chapter-index').textContent=String(Math.min(3,phase+1)).padStart(2,'0');$('chapter-name').textContent=['THE CONNECTION','THE MIND','THE WHOLE','WITHIN'][phase];if(state!=='intro')announce(['하나의 신경 연결망 안으로 들어갑니다.','카메라가 멀어지며 인간의 뇌가 드러납니다.','뇌에서 척수와 말초신경으로 이어진 전신이 드러납니다.','당신은 하나의 연결된 시스템입니다.'][phase]);}
     const final=narrative>=63;
     $('reveal-eyebrow').textContent=final?'YOU ARE A SYSTEM.':'ONE SIGNAL. ONE SYSTEM.';
-    $('statement').innerHTML=final?'불안은 성격이 아니었어요.<br><em>연결된 몸의 신호였어요.</em>':'당신은 조각이<br><em>아니에요.</em>';
-    $('reveal-copy').textContent=final?'손끝의 감각도, 가슴의 두근거림도 같은 연결망 위에 있어요.':'뇌에서 손끝까지, 모든 순간은 서로 이어져 있어요.';
+    $('statement').innerHTML=final?'이제 몸이<br><em>안전모드로 돌아올 차례예요.</em>':'당신은 조각이<br><em>아니에요.</em>';
+    $('reveal-copy').textContent=final?'손끝의 감각도, 가슴의 두근거림도 같은 연결망 위에 있어요. 연결된 몸은, 안전도 함께 배워요.':'뇌에서 손끝까지, 모든 순간은 서로 이어져 있어요.';
     $('revelation').style.opacity=narrative>=58?'1':'0';
     $('progress-fill').style.width=(elapsed/DURATION*100)+'%';
     $('time').textContent=fmt(elapsed)+' / '+fmt(DURATION);
@@ -773,18 +859,33 @@ if(scene){
     clearTimeout(signal.timeout);$('touch-label').style.opacity='0';$('touch-label').textContent='손끝에서 시작된 하나의 신호';
     shell.dataset.mode=mode;setState('intro');audio?.update(0,false);
     $('mode-whole').setAttribute('aria-pressed',String(mode==='whole'));$('mode-strain').setAttribute('aria-pressed',String(mode==='strain'));
-    $('intro-title').innerHTML=mode==='strain'?'균형이<br><em>흔들릴 때.</em>':'성격이 아니라,<br><em>신경계였어요.</em>';
-    $('intro-eyebrow').textContent=mode==='strain'?'A SYSTEM UNDER STRAIN':'THE UNIVERSE WITHIN';
-    $('intro-copy').innerHTML=mode==='strain'?'긴장이 오래 머물면, 몸은 어떻게 반응할까요.<br>연결된 몸의 변화를 만나는 25초.':'따로따로인 것 같던 마음과 몸은<br><b>하나로 이어진 시스템</b>이에요. 그 연결을 만나는 35초.';
+    $('intro-title').innerHTML=mode==='strain'?'균형이<br><em>흔들릴 때.</em>':'고장 난 게 아니라,<br><em>생존모드였어요.</em>';
+    $('intro-eyebrow').textContent=mode==='strain'?'A SYSTEM UNDER STRAIN':'나라는 작은 우주';
+    $('intro-copy').innerHTML=mode==='strain'?'긴장이 오래 머물면, 몸은 어떻게 반응할까요.<br>연결된 몸의 변화를 만나는 25초.':'불안, 두근거림, 잠 못 드는 밤.<br>따로가 아니라 <b>하나로 이어진 신경계의 신호</b>예요.<br>그 연결을 만나는 35초.';
     $('duration').textContent=mode==='strain'?'25 SECONDS · SHIFTING RHYTHMS':'35 SECONDS · ONE UNIVERSE';
     $('rhythm-key').hidden=mode!=='strain';$('whole-choices').hidden=mode==='strain';$('strain-choices').hidden=mode!=='strain';
     $('revelation').style.opacity='0';updateStartLabel();announce(mode==='strain'?'균형이 흔들릴 때. 25초 경험을 시작할 수 있습니다.':'하나로 연결된 나. 35초 경험을 시작할 수 있습니다.');
+  }
+  // Fit the body between the visible copy (top) and the controls (bottom) on phones.
+  const LAYOUT=globalThis.BIUM_LAYOUT;
+  function measureLayout(){
+    const W=scene.width,H=scene.height;if(W>700||H<=0){LAYOUT.td=LAYOUT.tcy=null;return}
+    const box=shell.getBoundingClientRect(),rel=el=>{const r=el.getBoundingClientRect();return{top:r.top-box.top,bottom:r.bottom-box.top,h:r.height}};
+    const open=shell.dataset.point==='open';let top,bottom;
+    if(open){top=rel(document.querySelector('.experience-tabs')).bottom+26;bottom=rel($('point-card')).top-14}
+    else{
+      const rv=rel($('revelation'));top=(rv.h>0?rv.bottom:H*.3)+(mode==='strain'?30:18);
+      bottom=rel($('cta-main')).top-14;
+    }
+    if(!(bottom-top>120)){LAYOUT.td=LAYOUT.tcy=null;return}
+    const focal=H*.94,d=Math.max(10.5,Math.min(22,7.35*focal/(bottom-top)));
+    LAYOUT.td=d;LAYOUT.tcy=(top+bottom)/2+.035*focal/d;scene.baseCache=null;
   }
   // Key points: card + linked path on the canvas.
   let pointIndex=-1;
   function openPoint(i,{focus=false}={}){
     pointIndex=(i+scene.hot.length)%scene.hot.length;const h=scene.hot[pointIndex];scene.select(pointIndex);
-    scene.liftTarget=scene.width<=700?1:0;shell.dataset.point='open';
+    shell.dataset.point='open';measureLayout();
     $('pc-num').textContent=String(pointIndex+1).padStart(2,'0')+' / '+String(scene.hot.length).padStart(2,'0');
     $('pc-title').textContent=h.title;$('pc-nerve').textContent='지나가는 신경 · '+h.nerve;$('pc-body').textContent=h.body;
     $('pc-link').textContent=h.link;$('pc-try').textContent=h.try;$('pc-trad').textContent=h.trad;
@@ -792,7 +893,7 @@ if(scene){
     if(focus)$('pc-close').focus({preventScroll:true});
   }
   function closePoint({focus=false}={}){
-    if(pointIndex<0&&$('point-card').hidden)return;pointIndex=-1;scene.select(-1);scene.liftTarget=0;delete shell.dataset.point;$('point-card').hidden=true;
+    if(pointIndex<0&&$('point-card').hidden)return;pointIndex=-1;scene.select(-1);delete shell.dataset.point;$('point-card').hidden=true;measureLayout();
     if(focus)$('points-open').focus({preventScroll:true});
   }
   $('points-open').addEventListener('click',()=>openPoint(pointIndex>=0?pointIndex:0,{focus:true}));
@@ -812,6 +913,11 @@ if(scene){
   }
   function frame(now){
     const dt=last===null?0:Math.min(.25,(now-last)/1000);last=now;
+    if(now-(frame.measured||0)>600){frame.measured=now;measureLayout()}
+    if(LAYOUT.td!=null){
+      if(LAYOUT.d==null||reduced.matches){LAYOUT.d=LAYOUT.td;LAYOUT.cy=LAYOUT.tcy}
+      else{const k=Math.min(1,dt*5);LAYOUT.d+=(LAYOUT.td-LAYOUT.d)*k;LAYOUT.cy+=(LAYOUT.tcy-LAYOUT.cy)*k;if(Math.abs(LAYOUT.td-LAYOUT.d)<.01&&Math.abs(LAYOUT.tcy-LAYOUT.cy)<.3){LAYOUT.d=LAYOUT.td;LAYOUT.cy=LAYOUT.tcy}}
+    }else{LAYOUT.d=LAYOUT.cy=null}
     if(state==='playing'){elapsed=Math.min(duration(),elapsed+dt);if(elapsed>=duration())finish();updateNarrative();audio?.update(elapsed/duration()*CAMERA_DURATION,soundOn)}
     if(state!=='paused')clock+=dt;
     if(mode==='strain'){
