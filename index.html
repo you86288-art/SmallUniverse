@@ -1,0 +1,835 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="theme-color" content="#03080d">
+  <meta name="description" content="성격이 아니라, 신경계였어요. 뇌·척수·말초신경이 하나로 이어진 몸을 35초 동안 직접 만나보세요. 안전모드 연구소 · BIUM">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="성격이 아니라, 신경계였어요 — 안전모드 연구소">
+  <meta property="og:description" content="하나로 연결된 몸을 만나는 35초 인터랙티브 체험. 손끝으로 신호를 보내보세요.">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@300;400&display=swap" rel="stylesheet">
+  <title>안전모드 연구소 — 하나로 연결된 나</title>
+  <style>
+:root{color-scheme:dark;--ink:#03080d;--pearl:#e2e5df;--muted:#899796;--platinum:#ddcba8;--line:rgba(206,224,216,.18)}
+*{box-sizing:border-box}html,body{margin:0;background:var(--ink);height:100%;overflow:hidden}body{font-family:Arial,"Noto Sans KR","Apple SD Gothic Neo",sans-serif;color:var(--pearl);-webkit-font-smoothing:antialiased}button,a{-webkit-tap-highlight-color:transparent}button{font:inherit;color:inherit;cursor:pointer}button:focus-visible,a:focus-visible{outline:2px solid var(--platinum);outline-offset:6px}button{border:0}button[hidden],[hidden]{display:none!important}a{color:inherit;text-decoration:none}#experience{position:relative;width:100%;height:100vh;height:100dvh;min-height:420px;overflow:hidden;isolation:isolate}canvas{position:absolute;width:100%;height:100%;display:block;touch-action:manipulation}.vignette{position:absolute;inset:0;pointer-events:none;background:radial-gradient(ellipse at 62% 49%,transparent 34%,rgba(3,8,13,.25) 78%,rgba(3,8,13,.62) 100%)}.header{position:absolute;top:0;left:0;width:100%;padding:max(30px,env(safe-area-inset-top)) 4.5%;display:flex;align-items:center;justify-content:space-between;z-index:3}.brand{display:flex;gap:12px;align-items:center;font-size:21px;letter-spacing:.22em;font-weight:400}.brand svg{width:23px;height:23px;stroke:#d9ded4;fill:none;stroke-width:.75}.edition{position:absolute;left:50%;transform:translateX(-50%);font-size:9px;letter-spacing:.2em;color:#91a39e;display:flex;gap:18px;align-items:center}.edition i{width:3px;height:3px;background:#83958e;border-radius:50%}.icon-button{display:grid;place-items:center;background:transparent;width:44px;height:44px;border:1px solid var(--line);border-radius:50%}.icon-button svg{width:18px;height:18px;fill:none;stroke:var(--pearl);stroke-width:1.2;stroke-linecap:round;stroke-linejoin:round}.sound-wave{display:none}[aria-pressed=true] .sound-wave{display:block}[aria-pressed=true] .sound-off{display:none}.intro{position:absolute;left:12%;top:50%;transform:translateY(-43%);transition:opacity 1.2s,transform 1.2s;max-width:520px}.eyebrow{font-size:9px;letter-spacing:.24em;color:#a2b6ae;display:flex;align-items:center;gap:13px}.tiny-line{height:1px;width:28px;background:#82968c}h1{font-family:Georgia,"Times New Roman",serif;font-weight:400;font-size:clamp(56px,6.4vw,100px);line-height:1.08;letter-spacing:-.035em;margin:30px 0}h1 em{font-weight:400;color:#c9d3c9}.intro-copy{font-size:13px;line-height:1.95;letter-spacing:.025em;color:#aebbb6;margin:0 0 32px}.start{display:flex;align-items:center;justify-content:space-between;gap:54px;padding:17px 23px;background:#d9ded2;color:#152322;border-radius:1px;font-size:12px;min-height:50px;transition:background .3s}.start:hover{background:#edf0e7}.start svg{height:18px;width:18px;stroke:currentColor;fill:none;stroke-width:1.2}.quiet-link{background:transparent;color:#a9b9b2;font-size:11px;letter-spacing:.025em;padding:12px 0;min-height:40px}.quiet-link:hover{color:#e7ebde}.quiet-link span{margin-left:12px}#direct{margin-top:10px;font-size:10px}.intro-note{font-size:10px;color:#677c74;line-height:1.8;margin-top:25px}.chapter{position:absolute;top:116px;left:4.5%;display:flex;align-items:center;gap:12px;color:#96aba4;font-size:9px;letter-spacing:.2em;opacity:0;transition:opacity 1s;pointer-events:none}.chapter-rule{height:1px;width:30px;background:#557067}#chapter-index{font-family:Georgia,serif;font-size:13px;color:#b5c3bb}.revelation{position:absolute;left:12%;top:45%;transform:translateY(-30%);opacity:0;pointer-events:none;transition:opacity 1.3s}.revelation .eyebrow{font-size:8px;color:#9ba99f}.statement{font-family:Georgia,"Times New Roman",serif;font-size:clamp(38px,4.2vw,64px);line-height:1.24;font-weight:400;letter-spacing:-.01em;margin:25px 0}.statement em{font-style:normal;color:#cbd8ca}.reveal-copy{font-size:11px;line-height:1.9;color:#9fb2a8;max-width:270px;word-break:keep-all}.touch-label{position:absolute;pointer-events:none;opacity:0;font-size:9px;letter-spacing:.04em;color:#ddcba8;transform:translate(-50%,0);transition:opacity .5s;white-space:nowrap}.footer{position:absolute;bottom:max(30px,env(safe-area-inset-bottom));left:4.5%;right:4.5%;display:flex;align-items:center;justify-content:space-between;gap:20px;z-index:3}.signature{font-size:9px;letter-spacing:.12em;color:#9aaca1;white-space:nowrap}.signature span{color:#5f7c6f;margin-left:5px}.duration{font-size:8px;letter-spacing:.18em;color:#82998a}.transport{display:flex;align-items:center;gap:25px}.control{background:none;color:#aab9b0;font-size:10px;min-width:70px;min-height:44px;padding:8px}.control span{margin-left:8px;font-size:10px}.time{font-size:9px;letter-spacing:.08em;color:#739386;font-variant-numeric:tabular-nums}.progress{position:absolute;left:0;bottom:0;width:100%;height:2px;background:#10231d;opacity:0;transition:opacity 1s;pointer-events:none}.progress span{height:100%;width:0;display:block;background:#a7b3a0}.explore{display:flex;align-items:center;gap:32px}.touch-instruction{font-size:10px;color:#b6c2b5;display:flex;gap:10px;align-items:center}.pulse-dot{width:4px;height:4px;background:#d1c3a4;border-radius:50%;box-shadow:0 0 9px #bb997133}.explore-actions{display:flex;align-items:center;gap:20px}.body-choices{display:flex;border:1px solid var(--line);border-radius:1px;padding:0 5px}.body-choices button{background:none;font-size:10px;color:#9fb3a6;min-height:40px;min-width:47px;padding:7px 9px}.body-choices button:hover{color:#e6dcc7}.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}.fallback{position:absolute;inset:0;background:var(--ink);display:grid;place-items:center;text-align:center;padding:30px;z-index:10;color:#bbc8be;font-size:14px}#experience[data-state=playing] .intro,#experience[data-state=paused] .intro,#experience[data-state=exploring] .intro{opacity:0;transform:translateY(-46%);pointer-events:none}#experience[data-state=playing] .chapter,#experience[data-state=paused] .chapter{opacity:1}#experience[data-state=playing] .progress,#experience[data-state=paused] .progress{opacity:1}#experience[data-state=exploring] .revelation{opacity:1}#experience[data-state=exploring] canvas{cursor:crosshair}
+@media(max-width:700px){#experience{min-height:420px}.header{padding:max(20px,env(safe-area-inset-top)) 7%}.brand{font-size:18px;gap:10px}.brand svg{width:20px}.edition{font-size:8px;position:static;transform:none;letter-spacing:.13em;margin-left:auto;margin-right:16px}.edition i,.edition{gap:0}.edition{font-size:0}.edition::after{content:'INNER UNIVERSE';font-size:8px}.icon-button{width:40px;height:40px}.intro{left:10%;right:7%;top:45%;transform:translateY(-35%)}h1{font-size:clamp(52px,13vw,76px);margin:26px 0 23px}.intro-copy{font-size:12px;margin-bottom:27px}.start{padding:16px 20px;gap:45px}.intro-note{font-size:9px;margin-top:17px}.eyebrow{font-size:8px}.chapter{top:87px;left:7%;font-size:8px}.footer{bottom:max(20px,env(safe-area-inset-bottom));left:7%;right:7%;gap:0;flex-wrap:wrap}.signature{font-size:8px}.duration{font-size:7px;letter-spacing:.08em}.transport{width:100%;justify-content:space-between;gap:10px;margin-top:6px}.transport .quiet-link{font-size:10px}.transport .control{padding-left:0;text-align:left}.revelation{left:0;right:0;top:14%;transform:none;text-align:center}.revelation .eyebrow{justify-content:center;font-size:7px}.statement{font-size:clamp(27px,7vw,36px);line-height:1.18;margin:13px 0 10px}.statement br{display:none}.statement em{display:block}.reveal-copy{font-size:9px;max-width:none;margin:0 25px}.explore{width:100%;display:flex;flex-direction:column;gap:8px}.touch-instruction{font-size:10px}.explore-actions{width:100%;justify-content:space-between;gap:10px}.body-choices button{min-height:40px;min-width:49px}.touch-label{font-size:8px}#experience[data-state=exploring] .signature,#experience[data-state=playing] .signature,#experience[data-state=paused] .signature{display:none}}
+@media(max-height:570px) and (min-width:701px){.intro{top:47%}h1{font-size:56px;margin:18px 0}.intro-copy{margin-bottom:17px}.intro-note{display:none}.header{padding-top:15px}.chapter{top:80px}.footer{bottom:17px}.revelation{top:38%}.statement{font-size:40px}.touch-instruction{font-size:9px}.explore{gap:15px}}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{transition:none!important}}
+/* Two chapters of the same inner universe. */
+.experience-tabs{display:flex;gap:5px;padding:4px;border:1px solid var(--line);background:rgba(3,8,13,.72);border-radius:30px}
+.experience-tabs button{background:none;padding:12px 18px;min-height:42px;border-radius:24px;color:#869d92;font-size:12px;white-space:nowrap}
+.experience-tabs button[aria-pressed=true]{background:#d9ded2;color:#132520}.experience-tabs button span{font-size:9px;margin-left:9px;opacity:.6}
+#experience[data-mode=strain] .experience-tabs button[aria-pressed=true]{background:#dcc5b3}
+#experience[data-mode=strain] .progress span{background:#d39c78}
+#experience[data-mode=strain] .revelation{top:38%;max-width:360px}
+#experience[data-mode=strain] .statement{font-family:Arial,"Apple SD Gothic Neo",sans-serif;font-size:clamp(25px,3vw,43px);font-weight:300;line-height:1.55;letter-spacing:-.04em;margin:21px 0}
+#experience[data-mode=strain] .statement em{color:#ddc5af;font-weight:400}
+#experience[data-mode=strain] .reveal-copy{font-size:12px;max-width:310px;color:#b8b2a7}
+.rhythm-key{position:absolute;left:12%;top:67%;z-index:4;font-size:10px;color:#aebeb3;display:flex;flex-direction:column;gap:11px}
+.rhythm-key span{display:flex;align-items:center;gap:8px}.rhythm-key i{width:18px;height:2px;display:inline-block}.activation{background:#df9a75}.settling{background:#81c6b8}.rhythm-key small{font-size:9px;color:#7e9289}.rhythm-key .quiet-link{padding:0;text-align:left;min-height:28px;color:#b3b7a7}
+#experience[data-mode=strain][data-state=intro] .rhythm-key{display:none}
+#strain-choices button{min-width:43px}
+dialog{color:#dce3d9;background:#0a1519;border:1px solid #33463f;border-radius:12px;max-width:560px;width:calc(100% - 32px);max-height:85dvh;padding:38px;line-height:1.9;font-size:13px;overflow:auto}dialog::backdrop{background:#02070be8;backdrop-filter:blur(5px)}dialog h2{font-size:21px;font-weight:400;line-height:1.6;margin-top:24px}dialog p{color:#aebfb5}dialog .source-links{font-size:11px}dialog a{text-decoration:underline;text-underline-offset:3px}.dialog-close{display:block;margin-left:auto;background:none;min-height:40px;color:#c6cfbf;font-size:12px}
+@media(max-width:700px){
+ .header{flex-wrap:wrap;row-gap:16px}.experience-tabs{order:3;width:100%;justify-content:center;gap:2px}.experience-tabs button{flex:1;padding:10px 6px;font-size:11px}.experience-tabs button span{margin-left:5px}.header .icon-button{margin-left:auto}
+ .chapter{top:150px}.intro{top:50%;transform:translateY(-32%)}
+ #experience[data-mode=strain] .revelation{left:6%;right:6%;top:22%;max-width:none;transform:none}
+ #experience[data-mode=strain] .statement{font-size:23px;line-height:1.4;margin:11px 0 9px}
+ #experience[data-mode=strain] .statement br{display:none}#experience[data-mode=strain] .statement em{display:block}
+ #experience[data-mode=strain] .reveal-copy{font-size:10px;max-width:290px;margin:0 auto;line-height:1.8}
+ .rhythm-key{left:6%;right:6%;top:auto;bottom:125px;flex-direction:row;justify-content:center;flex-wrap:wrap;gap:5px 16px;font-size:9px;pointer-events:none}
+ .rhythm-key small{display:none}.rhythm-key .quiet-link{width:100%;text-align:center;font-size:9px;min-height:28px;pointer-events:auto}
+ #experience[data-mode=strain][data-state=playing] .rhythm-key,#experience[data-mode=strain][data-state=paused] .rhythm-key{bottom:80px}
+ #experience[data-mode=strain] .touch-instruction{line-height:1.6;text-align:center;min-height:30px;font-size:10px}
+ #experience[data-mode=strain] .explore{gap:4px}#experience[data-mode=strain] .footer{bottom:max(12px,env(safe-area-inset-bottom))}
+ #strain-choices button{min-width:40px;padding:7px 8px}dialog{padding:22px}
+}
+@media(max-height:700px) and (max-width:700px){
+ .header{padding-top:12px;row-gap:8px}.chapter{top:128px}.intro{top:52%}h1{font-size:46px;margin:14px 0}.intro-copy{margin-bottom:18px}.intro-note{display:none}
+ #experience[data-mode=strain] .revelation{top:24%}#experience[data-mode=strain] .statement{font-size:20px;margin:7px 0}#experience[data-mode=strain] .reveal-copy{font-size:9px}.rhythm-key{bottom:113px}
+}
+@media(max-height:570px) and (min-width:701px){.experience-tabs button{padding:8px 13px}.rhythm-key{top:61%;gap:5px}#experience[data-mode=strain] .revelation{top:32%}#experience[data-mode=strain] .statement{font-size:25px;margin:12px 0}#experience[data-mode=strain] .reveal-copy{font-size:10px}}
+@media(max-width:700px){
+ #experience[data-mode=strain] .chapter{display:none}
+ .rhythm-key,#experience[data-mode=strain][data-state=playing] .rhythm-key,#experience[data-mode=strain][data-state=paused] .rhythm-key{top:142px;bottom:auto;gap:3px 12px;font-size:8px;align-items:center}
+ .rhythm-key .quiet-link{width:auto;min-height:24px;font-size:8px}
+ #experience[data-mode=strain] .revelation{top:184px}
+}
+@media(max-height:700px) and (max-width:700px){
+ .rhythm-key,#experience[data-mode=strain][data-state=playing] .rhythm-key,#experience[data-mode=strain][data-state=paused] .rhythm-key{top:120px}
+ #experience[data-mode=strain] .revelation{top:153px}
+}
+/* Keep the final body below the two-row mobile navigation and its caption. */
+#experience{min-height:0}
+@media(max-width:700px){
+ #experience{min-height:0}
+ #experience[data-mode=whole] .revelation{top:172px}
+ .body-choices button,#strain-choices button{min-height:44px}
+}
+@media(max-height:700px) and (max-width:700px){
+ #experience[data-mode=whole] .revelation{top:143px}
+ #experience[data-mode=whole] .statement{font-size:24px;margin:10px 0 8px}
+}
+@media(min-width:701px) and (max-width:1000px){
+ #experience[data-state=exploring] .signature{display:none}
+ .explore{width:100%;justify-content:space-between}
+ .touch-instruction{max-width:48%;line-height:1.6}
+}
+
+/* Start button: high contrast, readable on any phone */
+.start,.start span{color:#0d1714!important;-webkit-text-fill-color:#0d1714}
+.start{background:#e6d6b3!important;font-size:15px;font-weight:600;letter-spacing:-.01em;padding:18px 24px;min-height:56px;min-width:240px;border-radius:3px;box-shadow:0 0 0 1px rgba(230,214,179,.35),0 12px 40px -12px rgba(230,214,179,.55);forced-color-adjust:none}
+.start:hover{background:#f2e6ca!important}
+.start svg{width:20px;height:20px;stroke-width:1.6}
+@media(max-width:700px){.start{width:100%;font-size:16px;min-height:56px}}
+/* ── v2 · Safe Mode Lab profile landing ───────────────────────── */
+.brand-sub{font-size:10px;letter-spacing:.08em;color:#9fb1a8;margin-left:4px;padding-left:12px;border-left:1px solid var(--line)}
+h1,.statement{font-family:"Noto Serif KR",Georgia,"Times New Roman",serif}
+h1{font-weight:300;font-size:clamp(46px,5.2vw,82px);line-height:1.22;letter-spacing:-.045em;word-break:keep-all}
+h1 em{font-style:normal;color:#e6d6b3}
+.intro-copy{font-size:14px;color:#b9c5bf;word-break:keep-all}
+.intro-copy b{font-weight:400;color:#e2e5df}
+.statement{font-weight:300;font-size:clamp(32px,3.5vw,54px);line-height:1.38;letter-spacing:-.04em;word-break:keep-all}
+.statement em{color:#e6d6b3}
+.reveal-copy{font-size:12px;max-width:300px}
+/* Anatomical key — a quiet diagram legend for the whole-body view */
+.anatomy-key{position:absolute;right:4.5%;top:50%;transform:translateY(-50%);display:flex;flex-direction:column;gap:14px;font-size:10px;color:#a9b9b0;opacity:0;transition:opacity 1.2s;pointer-events:none;z-index:2}
+.anatomy-key span{display:flex;align-items:center;gap:10px;letter-spacing:.04em}
+.anatomy-key i{width:20px;height:2px;border-radius:2px;display:inline-block}
+.anatomy-key .k-brain{background:#c9ddd2}.anatomy-key .k-cord{background:#f0dfb8}.anatomy-key .k-nerve{background:#8fc7b8}
+.anatomy-key small{font-size:9px;color:#6f857c;letter-spacing:.04em}
+#experience[data-mode=whole][data-state=exploring] .anatomy-key{opacity:1}
+/* Profile CTA — the one next step after the experience */
+.cta{position:absolute;left:12%;bottom:118px;z-index:4;display:flex;flex-direction:column;gap:10px;align-items:flex-start;opacity:0;transform:translateY(10px);transition:opacity 1s .6s,transform 1s .6s;pointer-events:none}
+#experience[data-state=exploring] .cta{opacity:1;transform:none;pointer-events:auto}
+.cta-main{display:flex;align-items:center;justify-content:space-between;gap:28px;padding:15px 20px;min-height:52px;background:#e6d6b3;color:#14201d;border-radius:2px;font-size:13px;letter-spacing:-.01em;box-shadow:0 0 0 1px rgba(230,214,179,.25),0 10px 40px -10px rgba(230,214,179,.35);transition:background .3s}
+.cta-main:hover{background:#f2e6ca}
+.cta-main small{display:block;font-size:10px;color:#4c5a53;margin-top:3px}
+.cta-main svg{width:18px;height:18px;flex:none;stroke:currentColor;fill:none;stroke-width:1.3}
+.cta-links{display:flex;gap:18px;font-size:11px;color:#a9b9b2}
+.cta-links a{padding:8px 0;min-height:36px;display:inline-flex;align-items:center;border-bottom:1px solid transparent}
+.cta-links a:hover{color:#eee6d3;border-color:#5d6f67}
+@media(max-height:700px) and (min-width:701px){.cta{bottom:96px}.anatomy-key{display:none}}
+@media(max-width:1000px) and (min-width:701px){.anatomy-key{display:none}.revelation{left:6%;max-width:50%}.statement{font-size:clamp(26px,3.6vw,36px)}#experience[data-mode=whole] .statement br{display:block}.cta{left:6%}.intro{left:6%}}
+@media(max-width:700px){
+ .brand-sub{font-size:9px;letter-spacing:.04em;padding-left:9px;margin-left:0}
+ h1{font-size:clamp(38px,10.5vw,52px);line-height:1.25;margin:20px 0 18px}
+ .intro-copy{font-size:13px}
+ .anatomy-key{display:none}
+ #experience[data-mode=whole] .statement{font-size:clamp(22px,6vw,28px);line-height:1.35}
+ #experience[data-mode=whole] .reveal-copy{font-size:11px}
+ .cta{left:7%;right:7%;bottom:calc(max(20px,env(safe-area-inset-bottom)) + 92px);align-items:stretch;gap:4px}
+ .cta-main{padding:12px 16px;min-height:50px;font-size:13px}
+ .cta-links{justify-content:center;gap:20px;font-size:11px}
+ .cta-links a{min-height:32px;padding:4px 0}
+ #experience[data-state=exploring] .touch-instruction{display:none}
+}
+@media(max-height:700px) and (max-width:700px){
+ h1{font-size:36px;margin:12px 0}
+ .cta{bottom:calc(max(12px,env(safe-area-inset-bottom)) + 52px)}
+ .cta-main small{display:none}
+ #experience[data-mode=whole] .statement{font-size:21px}
+}
+
+/* Key nerve passage points */
+.points-open{display:flex;align-items:center;gap:8px;color:#eadcc0!important;white-space:nowrap}
+.points-open i{font-style:normal;font-size:8px;color:#e6d6b3;text-shadow:0 0 8px #e6d6b3}
+.point-card{position:absolute;left:12%;top:50%;transform:translateY(-46%);width:min(390px,40vw);max-height:calc(100% - 210px);overflow:auto;z-index:5;background:rgba(6,16,19,.84);-webkit-backdrop-filter:blur(14px);backdrop-filter:blur(14px);border:1px solid rgba(230,214,179,.22);border-radius:6px;padding:18px 22px 14px;color:#d9dfd8;word-break:keep-all;box-shadow:0 20px 60px -20px rgba(0,0,0,.7)}
+.pc-top{display:flex;align-items:center;gap:12px;font-size:9px;letter-spacing:.18em;color:#8fa79c}
+.pc-num{font-family:Georgia,serif;font-size:12px;letter-spacing:.08em;color:#e6d6b3}
+.pc-close{margin-left:auto;background:none;width:36px;height:36px;margin-right:-10px;font-size:20px;color:#b8c5bd;border-radius:50%}
+.point-card h3{font-family:"Noto Serif KR",Georgia,serif;font-weight:400;font-size:24px;letter-spacing:-.03em;color:#f0e6d0;margin:4px 0 4px}
+.pc-nerve{font-size:11px;color:#8fc7b8;margin:0 0 10px;letter-spacing:.01em}
+.pc-body{font-size:13px;line-height:1.7;color:#c7d1cb;margin:0 0 10px}
+.pc-row{display:grid;grid-template-columns:78px 1fr;gap:10px;font-size:12px;line-height:1.6;margin:0;padding:8px 0;border-top:1px solid rgba(206,224,216,.12)}
+.pc-row span{color:#8fa79c;font-size:10px;padding-top:2px}.pc-row b{font-weight:400;color:#e2e5df}
+.pc-link b{color:#f0dfb8}
+.pc-trad{font-size:11px;color:#a9b9b0;margin:0;padding:8px 0 4px;border-top:1px solid rgba(206,224,216,.12)}
+.pc-nav{display:flex;justify-content:space-between;margin:4px -6px 2px}
+.pc-nav button{background:none;color:#e6d6b3;font-size:12px;min-height:40px;padding:6px}
+.pc-note{font-size:10px;line-height:1.6;color:#6f857c;margin:2px 0 0}
+#experience[data-point=open] .revelation,#experience[data-point=open] .cta,#experience[data-point=open] .anatomy-key{opacity:0!important;pointer-events:none!important}
+@media(max-width:1000px) and (min-width:701px){.point-card{left:6%;width:min(380px,46vw)}}
+@media(max-width:700px){
+ .point-card{left:0;right:0;top:auto;bottom:0;transform:none;width:auto;max-height:min(47%,400px);border-radius:14px 14px 0 0;border-bottom:0;padding:10px 20px calc(10px + env(safe-area-inset-bottom))}
+ .point-card h3{font-size:20px;margin:0 0 2px}
+ .pc-body{font-size:12.5px;line-height:1.65;margin-bottom:6px}
+ .pc-row{grid-template-columns:70px 1fr;font-size:12px;padding:6px 0}
+ .pc-kicker{display:none}
+ #experience[data-point=open] .footer{opacity:0;pointer-events:none}
+ #whole-choices{flex:1;border:1px solid rgba(230,214,179,.35)}
+ .points-open{width:100%;justify-content:center}
+}
+</style>
+</head>
+<body>
+  <main id="experience" data-state="intro" data-mode="whole">
+    <canvas id="universe" aria-label="뇌, 척수와 말초신경으로 이어지는 하나의 신경 연결망"></canvas>
+    <div class="vignette" aria-hidden="true"></div>
+    <header class="header">
+      <a class="brand" href="./index.html" aria-label="BIUM 처음으로"><svg viewBox="0 0 28 28" aria-hidden="true"><path d="M14 2v24M2 14h24M5.5 5.5l17 17m0-17-17 17"/><circle cx="14" cy="14" r="6"/></svg><span>BIUM</span><span class="brand-sub">안전모드 연구소</span></a>
+      <nav class="experience-tabs" aria-label="경험 선택">
+        <button id="mode-whole" aria-pressed="true">하나로 연결된 나 <span>35s</span></button>
+        <button id="mode-strain" aria-pressed="false">균형이 흔들릴 때 <span>25s</span></button>
+      </nav>
+      <button id="sound" class="icon-button" aria-pressed="false" aria-label="소리 켜기"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 9h4l5-4v14l-5-4H4z"/><path class="sound-wave" d="M17 8c3 2 3 6 0 8m3-11c5 4 5 10 0 14"/><path class="sound-off" d="m17 10 4 4m0-4-4 4"/></svg></button>
+    </header>
+
+    <section class="intro" id="intro" aria-labelledby="intro-title">
+      <div class="eyebrow" id="intro-eyebrow">THE UNIVERSE WITHIN</div>
+      <h1 id="intro-title">성격이 아니라,<br><em>신경계였어요.</em></h1>
+      <p class="intro-copy" id="intro-copy">따로따로인 것 같던 마음과 몸은<br><b>하나로 이어진 시스템</b>이에요. 그 연결을 만나는 35초.</p>
+      <button class="start" id="start"><span>경험 시작하기</span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12h15m-6-6 6 6-6 6"/></svg></button>
+      <button class="quiet-link" id="direct">연결망 바로 탐색하기 <span>↗</span></button>
+      <p class="intro-note" id="intro-note">천천히 바라보세요. 마지막에는 당신의 손끝으로.</p>
+    </section>
+
+    <div class="chapter" id="chapter" aria-hidden="true"><span id="chapter-index">01</span><span class="chapter-rule"></span><span id="chapter-name">THE CONNECTION</span></div>
+
+    <section class="revelation" id="revelation" aria-label="하나의 연결된 시스템">
+      <div class="eyebrow" id="reveal-eyebrow">ONE SIGNAL. ONE SYSTEM.</div>
+      <p class="statement" id="statement">당신은 조각이<br><em>아니에요.</em></p>
+      <p class="reveal-copy" id="reveal-copy">당신의 모든 순간은, 서로 이어져 있습니다.</p>
+    </section>
+
+    <aside class="anatomy-key" aria-hidden="true">
+      <span><i class="k-brain"></i>뇌 · 신호를 해석하는 곳</span>
+      <span><i class="k-cord"></i>척수 · 몸과 뇌를 잇는 길</span>
+      <span><i class="k-nerve"></i>말초신경 · 손끝·발끝까지</span>
+      <small>단순화한 모식도예요</small>
+    </aside>
+
+    <nav class="cta" id="cta" aria-label="다음 단계">
+      <a class="cta-main" id="cta-main" href="https://bium-check.vercel.app" target="_blank" rel="noopener"><span>내 신경계, 지금 어떤 모드일까?<small>무료 자가체크로 확인하기</small></span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12h15m-6-6 6 6-6 6"/></svg></a>
+      <div class="cta-links">
+        <a id="cta-diary" href="https://safediary1111.vercel.app" target="_blank" rel="noopener">안전모드 다이어리 ↗</a>
+        <a id="cta-hub" href="#" target="_blank" rel="noopener">모든 링크 보기 ↗</a>
+      </div>
+    </nav>
+
+    <aside class="point-card" id="point-card" hidden aria-labelledby="pc-title">
+      <div class="pc-top"><span class="pc-num" id="pc-num">01 / 08</span><span class="pc-kicker">WHERE NERVES PASS</span><button class="pc-close" id="pc-close" aria-label="포인트 설명 닫기">×</button></div>
+      <h3 id="pc-title">목 뒤 · 후두하근</h3>
+      <p class="pc-nerve" id="pc-nerve"></p>
+      <p class="pc-body" id="pc-body"></p>
+      <p class="pc-row pc-link"><span>이어진 곳</span><b id="pc-link"></b></p>
+      <p class="pc-row"><span>해볼 수 있는 것</span><b id="pc-try"></b></p>
+      <p class="pc-trad" id="pc-trad"></p>
+      <div class="pc-nav"><button id="pc-prev" aria-label="이전 포인트">‹ 이전</button><button id="pc-next" aria-label="다음 포인트">다음 ›</button></div>
+      <p class="pc-note">근육과 근막 사이로 신경과 혈관이 함께 지나가요. 부드러운 압력과 따뜻함은 순환을 돕고, '지금 안전하다'는 감각 신호를 뇌로 보낼 수 있어요. 느낌은 사람마다 달라요. 통증·저림·힘 빠짐이 계속되면 진료를 받아 보세요.</p>
+    </aside>
+
+    <aside id="rhythm-key" class="rhythm-key" hidden aria-label="색상에 담긴 의미">
+      <span><i class="activation"></i>교감 · 동원과 대응</span><span><i class="settling"></i>부교감 · 휴식과 소화</span>
+      <small>색과 리듬은 기능을 비유합니다</small>
+      <button id="about" class="quiet-link">이 장면 이해하기 ↗</button>
+    </aside>
+    <dialog id="explanation" aria-labelledby="explanation-title">
+      <button id="close-about" class="dialog-close" aria-label="설명 닫기">닫기 ×</button>
+      <div class="eyebrow">ABOUT THIS EXPERIENCE</div>
+      <h2 id="explanation-title">균형은, 고정된 비율이 아니라<br>상황에 맞게 조절하는 능력.</h2>
+      <p>교감신경과 부교감신경은 모두 필요합니다. 활동·위협에 대응하고, 휴식·소화 등을 조절합니다. 건강한 상태가 항상 50:50이라는 뜻은 아닙니다.</p>
+      <p>이 25초 장면은 긴장과 스트레스가 오래 지속될 때 여러 신체 기능에 부담이 나타날 수 있음을 표현합니다. 두근거림, 근육 긴장, 소화 불편, 두통·수면 문제 등은 함께 나타날 수 있지만 사람마다 다릅니다.</p>
+      <p>자율신경 기능 이상과 신경의 구조적 손상은 같은 의미가 아닙니다. 스트레스만으로 모든 통증이나 질환을 설명할 수 없으며, 이 장면의 순서·색상·속도는 실제 병의 진행이나 측정값이 아닙니다. 불편이 지속되면 원인을 확인하는 진료가 필요할 수 있습니다.</p>
+      <p class="source-links">참고 자료 · <a href="https://www.nccih.nih.gov/health/stress" target="_blank" rel="noopener noreferrer">NIH NCCIH — Stress ↗</a> · <a href="https://www.ninds.nih.gov/health-information/disorders/glossary-neurological-terms" target="_blank" rel="noopener noreferrer">NIH NINDS — Dysautonomia ↗</a></p>
+    </dialog>
+    <div class="touch-label" id="touch-label" aria-hidden="true">손끝에서 시작된 하나의 신호</div>
+    <div id="announcer" class="sr-only" aria-live="polite" aria-atomic="true"></div>
+
+    <footer class="footer">
+      <div class="signature">BE WITHIN. <span>BE WHOLE.</span></div>
+      <div class="transport" id="transport" hidden>
+        <button class="control" id="pause" aria-label="일시정지">일시정지 <span>Ⅱ</span></button>
+        <span class="time" id="time">00:00 / 00:35</span>
+        <button class="quiet-link" id="skip">전신으로 이동 <span>↗</span></button>
+      </div>
+      <div class="explore" id="explore" hidden>
+        <div class="touch-instruction"><span class="pulse-dot"></span><span id="interaction-status">신체의 한 지점을 터치해 보세요</span></div>
+        <div class="explore-actions"><div class="body-choices" id="whole-choices" aria-label="핵심 포인트"><button id="points-open" class="points-open"><i aria-hidden="true">●</i>신경이 지나는 핵심 포인트 8</button></div><div class="body-choices" id="strain-choices" aria-label="살펴볼 신체 부위" hidden><button data-organ="head">머리</button><button data-organ="heart">심장</button><button data-organ="gut">배</button><button data-organ="shoulder">어깨</button></div><button id="replay" class="quiet-link">다시 보기 <span>↺</span></button></div>
+      </div>
+      <span class="duration" id="duration">35 SECONDS · ONE UNIVERSE</span>
+    </footer>
+    <div class="progress" id="progress" aria-hidden="true"><span id="progress-fill"></span></div>
+    <noscript><div class="fallback">BIUM Experience는 JavaScript가 필요해요. 브라우저 설정에서 JavaScript를 켜 주세요.</div></noscript>
+    <div class="fallback" id="fallback" hidden>이 브라우저에서 장면을 그릴 수 없어요. 최신 브라우저에서 다시 열어 주세요.</div>
+  </main>
+  <script>
+(()=>{
+"use strict";
+const {DURATION,CAMERA_DURATION,buildModel,shortestPath,cameraAt,UniverseScene} = (()=>{
+// A single persistent model. The two reveals only change the camera.
+const DURATION = 35;
+// Camera keyframes retain their normalized cinematic timeline.
+const CAMERA_DURATION = 70;
+const clamp=(v,a=0,b=1)=>Math.max(a,Math.min(b,v));
+const smooth=v=>{v=clamp(v);return v*v*(3-2*v)};
+const mix=(a,b,t)=>a+(b-a)*t;
+const length=(a,b)=>Math.hypot(a.x-b.x,a.y-b.y,a.z-b.z);
+function random(seed=9127){return()=>{seed=(Math.imul(seed,1664525)+1013904223)>>>0;return seed/4294967296}}
+
+function buildModel(){
+  const rng=random(),nodes=[],edges=[],fibers=[],outlines=[],regions={};
+  const node=(x,y,z,kind='nerve')=>{const n={x,y,z,kind,id:nodes.length,adj:[]};nodes.push(n);return n.id};
+  const connect=(a,b)=>{if(a===b)return;const d=length(nodes[a],nodes[b]);nodes[a].adj.push({id:b,d});nodes[b].adj.push({id:a,d});edges.push({a,b,kind:nodes[a].kind==='brain'&&nodes[b].kind==='brain'?'brain':'nerve'});};
+  const root=node(0,2.66,.02,'brain');
+  // Two adjoining halves of ONE ellipsoid, with a narrow midline fissure.
+  // Unlike two offset full ellipsoids, this preserves one rounded cranial envelope.
+  const cortex=(side,u,v,r,fold)=>({
+    x:side*(.009+Math.sin(v)*Math.cos(u)*.465*r*fold),
+    y:3.12+Math.cos(v)*.46*r*fold,
+    z:Math.sin(v)*Math.sin(u)*.39*r*fold
+  });
+  for(let i=0;i<920;i++){
+    const side=i%2?1:-1,u=rng()*Math.PI-Math.PI/2,v=Math.acos(2*rng()-1),r=i<660?(.89+rng()*.11):Math.cbrt(rng())*.9;
+    const fold=1+.055*Math.sin(u*13+v*17)+.035*Math.sin(v*31-u*7);
+    const p=cortex(side,u,v,r,fold),id=node(p.x,p.y,p.z,'brain');
+    const nearest=nodes.slice(0,id).map(n=>({id:n.id,d:length(n,nodes[id])})).sort((a,b)=>a.d-b.d);
+    connect(id,nearest[0].id);if(nearest[1])connect(id,nearest[1].id);
+  }
+  for(const side of [-1,1]){
+    for(let ring=1;ring<30;ring++){
+      const pts=[],v=ring/30*Math.PI;
+      for(let j=0;j<=96;j++){
+        const u=j/96*Math.PI-Math.PI/2,fold=1+.052*Math.sin(u*13+v*17)+.033*Math.sin(v*31-u*7);
+        pts.push(cortex(side,u,v,1,fold));
+      }
+      fibers.push({points:pts,kind:'cortex'});
+    }
+    for(let j=0;j<14;j++){
+      const pts=[],u=j/13*Math.PI-Math.PI/2;
+      for(let i=1;i<65;i++){
+        const v=i/65*Math.PI,fold=1+.06*Math.sin(u*13+v*17);
+        pts.push(cortex(side,u,v,1,fold));
+      }fibers.push({points:pts,kind:'cortex'});
+    }
+  }
+  // Cubic Hermite interpolation preserves the paths used by both drawing and signals.
+  function spline(points,steps=12){
+    const out=[];
+    for(let k=0;k<points.length-1;k++)for(let j=0;j<steps;j++){
+      const t=j/steps,p0=points[Math.max(0,k-1)],p1=points[k],p2=points[k+1],p3=points[Math.min(points.length-1,k+2)];
+      const q={};for(const key of ['x','y','z'])q[key]=.5*((2*p1[key])+(-p0[key]+p2[key])*t+(2*p0[key]-5*p1[key]+4*p2[key]-p3[key])*t*t+(-p0[key]+3*p1[key]-3*p2[key]+p3[key])*t*t*t);out.push(q);
+    }out.push(points.at(-1));return out;
+  }
+  const point=(x,y,z=0)=>({x,y,z});
+  function branch(parent,points,region){
+    const ids=[parent];for(const p of spline([nodes[parent],...points],5)){if(length(p,nodes[ids.at(-1)])<.001)continue;const id=node(p.x,p.y,p.z);connect(ids.at(-1),id);ids.push(id)}
+    if(region)regions[region]=ids.at(-1);return ids;
+  }
+  const spine=branch(root,[point(0,2.3),point(0,1.7,-.06),point(0,1.05,-.08),point(0,.45,-.04),point(0,-.22,0)]);
+  const attachAt=y=>spine.reduce((best,id)=>Math.abs(nodes[id].y-y)<Math.abs(nodes[best].y-y)?id:best,spine[0]);
+  regions.chest=attachAt(1.55);
+  // Parallel spinal fibers and a restrained translucent central cord.
+  for(let c=-3;c<=3;c++)fibers.push({kind:'spine',points:spline([point(c*.012,2.67,.025),point(c*.022,1.8,-.07),point(c*.018,.7,-.04),point(c*.013,-.24)],20)});
+  for(const side of [-1,1]){
+    const arm=branch(attachAt(2.2),[point(side*.5,2.24,.02),point(side*.88,2.08,.02),point(side*1.03,1.45,.02),point(side*1.19,.9,.04),point(side*1.36,.33,.04),point(side*1.41,.04,.04)],side===-1?'left-hand':'right-hand');
+    for(let j=0;j<5;j++){
+      branch(arm.at(-1),[point(side*(1.35+j*.032),-.07,.035),point(side*(1.30+j*.05),-.24-(j===0?-.08:Math.sin(j/4*Math.PI)*.08),.04)]);
+    }
+    for(let k=0;k<6;k++){
+      const a=arm[Math.floor(arm.length*(.25+k*.105))];
+      branch(a,[point(nodes[a].x+side*.06,nodes[a].y-.12,.055),point(nodes[a].x+side*.075,nodes[a].y-.29,.09)]);
+      fibers.push({kind:'nerve',points:spline([nodes[arm[3]],point(side*.95,1.8,-.025),point(side*1.12,1.02,-.005),point(side*(1.32+k*.008),.32,.03)],16)});
+    }
+    for(let k=0;k<12;k++){
+      const y=2.13-k*.15,a=attachAt(y),x=.70-(k/12)*.15;
+      const rib=branch(a,[point(side*.24,y+.05,.1),point(side*x,y-.06,.11),point(side*(x-.08),y-.23,.16)]);
+      if(k%2===0)branch(rib[7],[point(side*.41,y-.07,.22),point(side*.19,y-.16,.28)]);
+    }
+    const leg=branch(spine.at(-1),[point(side*.34,-.42,.01),point(side*.39,-1.13,.02),point(side*.43,-1.86,.05),point(side*.46,-2.57,.01),point(side*.5,-3.17,.08),point(side*.62,-3.3,.22)],side===-1?'left-foot':'right-foot');
+    for(let c=-2;c<=2;c++)fibers.push({kind:'nerve',points:spline([nodes[spine.at(-1)],point(side*(.34+c*.015),-.61,.04),point(side*(.43+c*.02),-1.8,.05),point(side*(.46+c*.017),-2.63,.025),point(side*.54,-3.21,.09)],20)});
+    for(let k=0;k<10;k++){
+      const a=leg[Math.floor(leg.length*(.14+k*.075))];
+      branch(a,[point(nodes[a].x+side*(k%2?.05:-.07),nodes[a].y-.16,.1),point(nodes[a].x+side*(k%2?.08:-.09),nodes[a].y-.31,.1)]);
+    }
+    for(let k=0;k<5;k++)branch(leg.at(-1),[point(side*(.52+k*.038),-3.32,.24),point(side*(.50+k*.043),-3.39,.30)]);
+    // Fine cervical branches occupy the head from the start.
+    for(let k=0;k<5;k++)branch(root,[point(side*.15,2.71+k*.025,.29),point(side*.25,2.89+k*.04,.34)]);
+  }
+  // The silhouette is a quiet frame for the system, never a separate reveal layer.
+  const left=[point(0,3.67,-.08),point(-.30,3.61,-.06),point(-.49,3.4,-.06),point(-.48,2.92,-.07),point(-.30,2.65,-.07),point(-.28,2.42,-.08),point(-.83,2.28,-.09),point(-1.04,2.04,-.08),point(-1.16,1.40,-.05),point(-1.36,.78,-.03),point(-1.54,.2,-.02),point(-1.55,-.22,-.02),point(-1.30,-.25,-.02),point(-1.23,.28,-.03),point(-1.07,.84,-.06),point(-.82,1.50,-.10),point(-.73,1.81,-.15),point(-.65,.73,-.14),point(-.62,.18,-.14),point(-.74,-.43,-.11),point(-.72,-1.31,-.09),point(-.65,-1.91,-.07),point(-.64,-2.63,-.03),point(-.65,-3.20,.07),point(-.76,-3.40,.20),point(-.32,-3.43,.18),point(-.28,-3.23,.06),point(-.25,-2.60,-.03),point(-.24,-1.88,-.08),point(-.15,-1.10,-.10),point(-.1,-.56,-.12),point(0,-.39,-.12)];
+  const outline=spline([...left,...left.slice(0,-1).reverse().map(p=>point(-p.x,p.y,p.z))],7);outlines.push(outline);
+  for(let k=0;k<14;k++){
+    const z=-.15+k*.018;
+    fibers.push({kind:'tissue',points:spline([point(-.54,2.2,z),point(-.45,1.64,z),point(-.4,.84,z),point(-.38,.0,z)],14)});
+    fibers.push({kind:'tissue',points:spline([point(.54,2.2,z),point(.45,1.64,z),point(.4,.84,z),point(.38,.0,z)],14)});
+  }
+  return{nodes,edges,fibers,outlines,regions,root};
+}
+
+function shortestPath(model,from,to=model.root){
+  // The connected graph is sparse. Dijkstra retains geometric travel distance.
+  const dist=new Float64Array(model.nodes.length).fill(Infinity),prev=new Int32Array(model.nodes.length).fill(-1),done=new Uint8Array(model.nodes.length);dist[from]=0;
+  for(let n=0;n<model.nodes.length;n++){
+    let u=-1,best=Infinity;for(let i=0;i<dist.length;i++)if(!done[i]&&dist[i]<best){best=dist[i];u=i}
+    if(u<0||u===to)break;done[u]=1;
+    for(const edge of model.nodes[u].adj){const d=dist[u]+edge.d;if(d<dist[edge.id]){dist[edge.id]=d;prev[edge.id]=u}}
+  }
+  if(!Number.isFinite(dist[to]))return[];
+  const ids=[to];while(ids.at(-1)!==from){const p=prev[ids.at(-1)];if(p<0)return[];ids.push(p)}return ids.reverse();
+}
+
+// Key passage points: where large nerves run between muscles and fascia.
+// Anatomy is well established; effects of pressure or massage vary by person.
+const HOTSPOTS=[
+ {short:'목 뒤',title:'목 뒤 · 후두하근',nerve:'대후두신경 · 후두하신경 (C1–C2)',pos:[.1,2.58,-.05],to:3,
+  body:'머리뼈 바로 아래에서 작은 근육 네 쌍이 머리의 미세한 움직임을 조절해요. 대후두신경은 이 근처를 지나 뒷머리로 올라가요. 화면을 오래 보면 이곳이 굳어 뒷머리가 묵직하게 느껴질 수 있어요.',
+  link:'견갑골 안쪽 — 승모근은 머리뼈 아래에서 시작해 날개뼈까지 덮고 있어요.',
+  try:'따뜻한 손바닥으로 목 뒤를 감싸 보세요. 턱을 살짝 당긴 채 숨을 길게 내쉬면 돼요.',trad:'한의학에서는 이 근처를 풍지(風池)라고 불러요.'},
+ {short:'귀',title:'귀 · 미주신경의 귀 가지',nerve:'미주신경 귓바퀴 가지',pos:[-.47,2.98,0],to:4,
+  body:'미주신경은 뇌줄기에서 내려와 심장과 폐, 소화기관까지 닿는 긴 신경이에요. 그 작은 가지 하나가 귓바퀴 안쪽 피부에 닿아 있어요.',
+  link:'명치·횡격막 — 같은 미주신경이 횡격막을 지나 배로 내려가요.',
+  try:'손끝으로 귓바퀴 안쪽을 부드럽게 쓸어 보세요. 내쉬는 숨은 들숨보다 길게 하면 돼요.',trad:'귀를 통한 미주신경 자극은 지금도 연구가 활발한 분야예요.'},
+ {short:'목 옆',title:'목 옆 · 사각근 사이',nerve:'상완신경총 (C5–T1)',pos:[.27,2.36,0],to:'right-hand',
+  body:'팔과 손으로 가는 신경 다발은 목 옆의 두 근육(앞·중간 사각근) 사이로 빠져나와요. 그래서 목의 긴장이 손끝 저림처럼 먼 곳에서 느껴지기도 해요.',
+  link:'손끝 — 이 다발은 어깨를 지나 손가락까지 이어져요.',
+  try:'귀를 어깨 쪽으로 천천히 기울이고 반대쪽 어깨는 아래로 내려 보세요. 그 자세로 다섯 번 호흡하면 돼요.',trad:'한의학에서는 어깨 위 견정(肩井) 근처를 자주 다뤄요.'},
+ {short:'견갑골 안쪽',title:'견갑골 안쪽 · 능형근',nerve:'견갑배신경 (C5)',pos:[-.42,1.92,-.1],to:2,
+  body:'견갑배신경은 목 옆 근육을 뚫고 나와 날개뼈 안쪽 근육까지 내려와요. 그래서 날개뼈 안쪽이 뻐근할 때 시작점이 목인 경우도 있어요.',
+  link:'목 옆 — 같은 신경이 목에서 출발해요. 어깨가 아플 때 견갑골을 함께 푸는 이유예요.',
+  try:'벽에 테니스공을 대고 날개뼈 안쪽으로 기대 보세요. 천천히 굴리면 돼요.',trad:'한의학에서는 이 근처를 고황(膏肓)이라고 불러요.'},
+ {short:'명치·횡격막',title:'명치 · 횡격막',nerve:'횡격신경 (C3–C5) · 미주신경',pos:[.12,.95,.1],to:2,
+  body:'숨 쉬는 근육인 횡격막은 목에서 내려온 횡격신경이 움직여요. 미주신경도 횡격막을 지나 배로 내려가요. 목과 호흡과 배는 처음부터 한 줄로 이어져 있어요.',
+  link:'목 옆 — 횡격신경은 목(C3–C5)에서 출발해요.',
+  try:'명치 아래에 손을 얹어 보세요. 내쉬는 숨을 들숨보다 두 배 길게 하면 돼요.',trad:'한의학에서는 명치 아래를 거궐(巨闕)이라고 불러요.'},
+ {short:'엉덩이',title:'엉덩이 · 이상근 아래',nerve:'좌골신경 (L4–S3)',pos:[.36,-.5,0],to:7,
+  body:'좌골신경은 몸에서 가장 굵고 긴 신경이에요. 엉덩이 깊은 곳의 근육(이상근) 아래를 지나 다리 뒤쪽으로 내려가요. 오래 앉아 있으면 이 길이 눌려 다리까지 묵직해질 수 있어요.',
+  link:'발바닥 — 이 신경의 가지는 발바닥까지 닿아요.',
+  try:'누워서 무릎을 세우고 한쪽 발목을 반대쪽 무릎 위에 올려 보세요. 그 자세로 천천히 호흡하면 돼요.',trad:'한의학에서는 이 근처를 환도(環跳)라고 불러요.'},
+ {short:'무릎 뒤',title:'무릎 뒤 · 오금',nerve:'경골신경 · 온종아리신경',pos:[-.42,-1.86,0],to:5,
+  body:'허리에서 내려온 좌골신경은 이 근처에서 두 갈래로 나뉘어요. 큰 혈관도 함께 지나가는 길이에요.',
+  link:'허리·엉덩이 — 한의학 고전에는 "허리와 등은 위중에서 구한다(腰背委中求)"는 구절이 있어요.',
+  try:'혈관이 지나는 곳이니 세게 누르지 마세요. 따뜻한 수건을 대고 다리를 천천히 폈다 굽혀 보세요.',trad:'한의학에서는 이곳을 위중(委中)이라고 불러요.'},
+ {short:'발바닥',title:'발바닥',nerve:'족저신경 (경골신경의 가지)',pos:[.56,-3.3,.2],to:'root',
+  body:'발바닥에는 감각 수용기가 촘촘해요. 여기서 출발한 신호는 다리 뒤쪽 신경을 타고 척수를 거쳐 뇌까지 올라가요.',
+  link:'뇌 — 발끝의 감각도 결국 뇌에 도착하는 신호예요.',
+  try:'맨발로 서서 발바닥 전체로 바닥을 천천히 눌러 디뎌 보세요.',trad:'한의학에서는 발바닥 앞쪽의 오목한 곳을 용천(湧泉)이라고 불러요.'}
+];
+
+function cameraAt(time,width,height){
+  const mobile=width<=700,mid=!mobile&&width<=1000,fit=mobile?19:mid?11.5:height<570?10.8:9.2;
+  const keys=[{t:0,d:.24,x:-.13,y:3.1,z:.4},{t:12,d:.43,x:-.1,y:3.085,z:.35},{t:30,d:1.72,x:0,y:3.075,z:.08},{t:40,d:2.42,x:0,y:2.90,z:0},{t:58,d:fit,x:0,y:.08,z:0},{t:70,d:fit,x:0,y:.08,z:0}];
+  let k=0;while(k<keys.length-2&&time>keys[k+1].t)k++;
+  const a=keys[k],b=keys[k+1],t=smooth((time-a.t)/(b.t-a.t));
+  return{d:Math.exp(mix(Math.log(a.d),Math.log(b.d),t)),x:mix(a.x,b.x,t),y:mix(a.y,b.y,t),z:mix(a.z,b.z,t),cx:width*(mobile?.5:mid?.75:.66),cy:height*(mobile?.55:.51),focal:height*.94};
+}
+
+class UniverseScene{
+  constructor(canvas){
+    this.canvas=canvas;this.ctx=canvas.getContext('2d',{alpha:false});if(!this.ctx)throw new Error('Canvas unavailable');
+    this.model=buildModel();this.pulses=[];this.waves=[];this.time=0;this.clock=0;this.reduced=false;this.width=1;this.height=1;this.dpr=1;this.camera=cameraAt(0,1,1);
+    // Graph distance of every node from the brain: lets one wave travel the whole body.
+    const m=this.model,n=m.nodes.length,dist=new Float64Array(n).fill(Infinity),done=new Uint8Array(n);dist[m.root]=0;
+    for(let k=0;k<n;k++){let u=-1,best=Infinity;for(let i=0;i<n;i++)if(!done[i]&&dist[i]<best){best=dist[i];u=i}if(u<0)break;done[u]=1;for(const e of m.nodes[u].adj){const d=dist[u]+e.d;if(d<dist[e.id])dist[e.id]=d}}
+    this.rootDist=dist;this.maxDist=0;for(const d of dist)if(Number.isFinite(d)&&d>this.maxDist)this.maxDist=d;
+    // Ambient traffic: sensory signals rise to the brain, responses travel back out.
+    this.flows=['left-hand','right-hand','left-foot','right-foot','chest'].map((k,i)=>{const path=shortestPath(m,m.regions[k]);const ds=[0];for(let j=1;j<path.length;j++)ds.push(ds.at(-1)+length(m.nodes[path[j-1]],m.nodes[path[j]]));return{path,distances:ds,total:ds.at(-1),seed:i*.37}});
+    // Hotspots snap to the nearest node so their links follow real graph paths.
+    this.hot=HOTSPOTS.map(h=>{const p={x:h.pos[0],y:h.pos[1],z:h.pos[2]};let best=0,bd=Infinity;for(const n of m.nodes){const d=length(n,p);if(d<bd){bd=d;best=n.id}}return{...h,p,node:best}});
+    this.selected=-1;this.link=null;this.lift=0;this.liftTarget=0;this.lastClock=0;this.pointsAlpha=0;
+    this.baseCanvas=document.createElement('canvas');this.bloomA=document.createElement('canvas');this.bloomB=document.createElement('canvas');
+    this.resize();
+  }
+  resize(width=this.canvas.clientWidth,height=this.canvas.clientHeight,dpr=globalThis.devicePixelRatio||1){
+    this.width=width;this.height=height;this.dpr=Math.min(dpr,width<701?1.5:1.75);this.canvas.width=Math.round(width*this.dpr);this.canvas.height=Math.round(height*this.dpr);this.camera=cameraAt(this.time,width,height);
+    if(this.baseCanvas){this.baseCanvas.width=this.canvas.width;this.baseCanvas.height=this.canvas.height;this.bloomA.width=Math.max(1,Math.round(this.canvas.width/4));this.bloomA.height=Math.max(1,Math.round(this.canvas.height/4));this.bloomB.width=Math.max(1,Math.round(this.canvas.width/12));this.bloomB.height=Math.max(1,Math.round(this.canvas.height/12));this.baseCache=null}
+  }
+  targetNode(to){return to==='root'?this.model.root:typeof to==='string'?this.model.regions[to]:this.hot[to].node}
+  select(i){
+    this.selected=i;if(i<0){this.link=null;return}
+    const h=this.hot[i],path=shortestPath(this.model,h.node,this.targetNode(h.to)),ds=[0];
+    for(let j=1;j<path.length;j++)ds.push(ds.at(-1)+length(this.model.nodes[path[j-1]],this.model.nodes[path[j]]));
+    this.link={path,distances:ds,total:ds.at(-1)||1,start:this.clock};
+  }
+  hitHot(x,y){
+    if(this.pointsAlpha<.3)return -1;let best=-1,bd=Math.max(22,Math.min(30,this.width*.06));
+    this.hot.forEach((h,i)=>{const q=this.project(h.p);if(!q)return;const d=Math.hypot(q.x-x,q.y-y);if(d<bd){bd=d;best=i}});return best;
+  }
+  drawHotspots(){
+    const a=this.pointsAlpha;if(a<=0)return;const ctx=this.ctx,clock=this.clock,labels=this.width>700;
+    ctx.save();
+    if(this.link&&this.selected>=0){
+      const L=this.link;ctx.globalCompositeOperation='lighter';ctx.beginPath();let started=false;
+      for(const id of L.path){const q=this.project(this.model.nodes[id]);if(!q)continue;if(!started){ctx.moveTo(q.x,q.y);started=true}else ctx.lineTo(q.x,q.y)}
+      ctx.strokeStyle=`rgba(240,223,184,${.5*a})`;ctx.lineWidth=2.2;ctx.lineCap='round';ctx.lineJoin='round';ctx.stroke();
+      const period=Math.max(1.4,Math.min(3.2,L.total*.5)),ph=this.reduced?1:((clock-L.start)/period)%1;
+      for(let k=0;k<3;k++){const t=(ph-k*.06+1)%1;const q=this.project(this.pathPoint(L.path,L.distances,t*L.total));if(q)this.glow(q.x,q.y,k?7:12,(k?.45:.95)*a)}
+      const end=this.project(this.model.nodes[L.path.at(-1)]);
+      if(end){ctx.globalCompositeOperation='source-over';ctx.beginPath();ctx.arc(end.x,end.y,10+Math.sin(clock*3)*1.5,0,Math.PI*2);ctx.strokeStyle=`rgba(143,199,184,${.8*a})`;ctx.lineWidth=1.3;ctx.setLineDash([3,3]);ctx.stroke();ctx.setLineDash([])}
+    }
+    ctx.globalCompositeOperation='source-over';
+    ctx.font=`600 ${labels?10:9}px "Noto Sans KR",Arial,sans-serif`;ctx.textAlign='center';ctx.textBaseline='middle';
+    this.hot.forEach((h,i)=>{
+      const q=this.project(h.p);if(!q)return;const sel=i===this.selected,dim=this.selected>=0&&!sel?.55:1;
+      const pulse=this.reduced?0:(Math.sin(clock*2.2+i*.8)+1)/2,r=sel?10:labels?8:7.5;
+      this.glow(q.x,q.y,r*2.6,(.28+pulse*.18)*a*dim);
+      ctx.beginPath();ctx.arc(q.x,q.y,r+3+pulse*4,0,Math.PI*2);ctx.strokeStyle=`rgba(230,214,179,${(.45-pulse*.3)*a*dim})`;ctx.lineWidth=1;ctx.stroke();
+      ctx.beginPath();ctx.arc(q.x,q.y,r,0,Math.PI*2);ctx.fillStyle=sel?`rgba(255,244,218,${a})`:`rgba(230,214,179,${.92*a*dim})`;ctx.fill();
+      ctx.fillStyle=`rgba(13,23,20,${a})`;ctx.fillText(String(i+1),q.x,q.y+.5);
+      if(labels){
+        const left=h.pos[0]<0;ctx.save();ctx.textAlign=left?'right':'left';ctx.font='400 11px "Noto Sans KR",Arial,sans-serif';
+        ctx.shadowColor='rgba(3,8,13,.95)';ctx.shadowBlur=6;ctx.fillStyle=sel?`rgba(255,244,218,${a})`:`rgba(226,229,223,${.82*a*dim})`;
+        ctx.fillText(h.short,q.x+(left?-(r+8):r+8),q.y);ctx.restore();
+      }
+    });
+    ctx.restore();
+  }
+  wave(strength=1){this.waves.push({start:this.clock,strength});this.waves=this.waves.slice(-3)}
+  pathPoint(path,distances,dist){
+    let i=1;while(i<distances.length-1&&distances[i]<dist)i++;
+    const a=this.model.nodes[path[i-1]],b=this.model.nodes[path[i]],den=distances[i]-distances[i-1],t=den?clamp((dist-distances[i-1])/den):0;
+    return{x:mix(a.x,b.x,t),y:mix(a.y,b.y,t),z:mix(a.z,b.z,t)};
+  }
+  // Cheap, Safari-safe bloom: downsample the frame twice and add it back softly.
+  // True only when the canvas has real pixels; preview panes can report 0×0 at load.
+  ready(){return this.canvas.width>0&&this.canvas.height>0&&this.bloomA.width>0&&this.bloomB.width>0}
+  // Re-measure if the element's size changed without a window resize event.
+  syncSize(){const w=this.canvas.clientWidth,h=this.canvas.clientHeight;if(w>0&&h>0&&(w!==this.width||h!==this.height||!this.ready()))this.resize(w,h)}
+  bloom(amount=1){
+    if(amount<=0||!this.ready())return;const ctx=this.ctx,W=this.canvas.width,H=this.canvas.height,a=this.bloomA.getContext('2d'),b=this.bloomB.getContext('2d');
+    a.imageSmoothingQuality='high';b.imageSmoothingQuality='high';
+    a.globalCompositeOperation='copy';a.drawImage(this.canvas,0,0,this.bloomA.width,this.bloomA.height);
+    b.globalCompositeOperation='copy';b.drawImage(this.bloomA,0,0,this.bloomB.width,this.bloomB.height);
+    ctx.save();ctx.setTransform(1,0,0,1,0,0);ctx.globalCompositeOperation='lighter';ctx.imageSmoothingQuality='high';
+    ctx.globalAlpha=.34*amount;ctx.drawImage(this.bloomA,0,0,W,H);
+    ctx.globalAlpha=.42*amount;ctx.drawImage(this.bloomB,0,0,W,H);
+    ctx.restore();
+  }
+  project(p){const c=this.camera,depth=c.d+c.z-p.z;if(depth<.028)return null;return{x:c.cx+(p.x-c.x)*c.focal/depth,y:c.cy-(p.y-c.y)*c.focal/depth,depth};}
+  hitTest(x,y){
+    let best=null,d=Infinity;
+    for(const n of this.model.nodes){const p=this.project(n);if(!p)continue;const delta=Math.hypot(p.x-x,p.y-y);if(delta<d){d=delta;best=n.id}}
+    // A generous tap target follows the visible nerves rather than the whole screen.
+    return d<=Math.max(28,this.height*.047)?best:null;
+  }
+  sendSignal(id){
+    const path=shortestPath(this.model,id);if(!path.length)return false;
+    const distances=[0];for(let i=1;i<path.length;i++)distances.push(distances.at(-1)+length(this.model.nodes[path[i-1]],this.model.nodes[path[i]]));
+    const total=distances.at(-1),returnPath=shortestPath(this.model,this.model.regions['right-foot']).reverse();this.pulses.push({path,distances,total,returnPath,start:this.clock,duration:Math.max(1.5,Math.min(3.5,total*.38)),source:id});
+    this.pulses=this.pulses.slice(-6);return true;
+  }
+  signalPosition(pulse,age){
+    const dist=clamp(age/pulse.duration)*pulse.total;
+    let i=1;while(i<pulse.distances.length-1&&pulse.distances[i]<dist)i++;
+    if(pulse.path.length===1)return this.model.nodes[pulse.path[0]];
+    const a=this.model.nodes[pulse.path[i-1]],b=this.model.nodes[pulse.path[i]],den=pulse.distances[i]-pulse.distances[i-1],t=den?(dist-pulse.distances[i-1])/den:0;
+    return{x:mix(a.x,b.x,t),y:mix(a.y,b.y,t),z:mix(a.z,b.z,t)};
+  }
+  render(time,clock,cameraOverride=null,opts={}){
+    this.syncSize();if(!this.ready())return false;
+    const dt=Math.max(0,Math.min(.1,clock-this.lastClock));this.lastClock=clock;
+    this.lift+=(this.liftTarget-this.lift)*Math.min(1,dt*6);if(Math.abs(this.liftTarget-this.lift)<.002)this.lift=this.liftTarget;
+    this.time=time;this.clock=clock;this.camera=cameraOverride||cameraAt(time,this.width,this.height);
+    if(!cameraOverride&&this.lift>0)this.camera={...this.camera,cy:this.camera.cy-this.lift*this.height*.2};
+    const ctx=this.ctx,w=this.width,h=this.height;ctx.setTransform(this.dpr,0,0,this.dpr,0,0);
+    const cacheKey=[this.camera.cy,this.camera.d,this.camera.x,this.camera.y,this.camera.z,w,h,this.dpr].join(':');
+    let pts;
+    if(this.baseCache?.key===cacheKey){ctx.save();ctx.setTransform(1,0,0,1,0,0);ctx.drawImage(this.baseCanvas,0,0);ctx.restore();pts=this.baseCache.points;}
+    else{
+    ctx.fillStyle='#03080d';ctx.fillRect(0,0,w,h);
+    const ambient=ctx.createRadialGradient(w*.64,h*.44,0,w*.64,h*.44,h*.67);ambient.addColorStop(0,'#0a1a1c');ambient.addColorStop(.6,'#061015');ambient.addColorStop(1,'#03080d');ctx.fillStyle=ambient;ctx.fillRect(0,0,w,h);
+    pts=this.model.nodes.map(n=>this.project(n));
+    const trace=(points,stride=1)=>{let started=false;for(let i=0;i<points.length;i+=stride){const p=this.project(points[i]);if(!p||Math.abs(p.x)>w*12||Math.abs(p.y)>h*12){started=false;continue}if(!started){ctx.moveTo(p.x,p.y);started=true}else ctx.lineTo(p.x,p.y)}};
+    for(const outline of this.model.outlines){ctx.beginPath();trace(outline);ctx.closePath();const fill=ctx.createLinearGradient(w*.45,0,w*.8,h);fill.addColorStop(0,'rgba(175,197,185,.025)');fill.addColorStop(.7,'rgba(132,179,167,.015)');fill.addColorStop(1,'rgba(68,123,123,.026)');ctx.fillStyle=fill;ctx.fill();ctx.strokeStyle='rgba(158,188,182,.105)';ctx.lineWidth=.7;ctx.stroke();}
+    for(const kind of ['tissue','cortex','nerve','spine']){
+      ctx.beginPath();for(const fiber of this.model.fibers)if(fiber.kind===kind)trace(fiber.points,kind==='cortex'&&this.camera.d>5?3:1);
+      ctx.strokeStyle=kind==='cortex'?'rgba(201,222,213,.25)':kind==='spine'?'rgba(240,223,184,.5)':kind==='tissue'?'rgba(141,180,168,.025)':'rgba(176,213,200,.17)';ctx.lineWidth=kind==='spine'?1.15:kind==='cortex'?.65:.7;ctx.stroke();
+    }
+    for(const kind of ['brain','nerve'])for(let group=0;group<3;group++){
+      ctx.beginPath();for(let i=group;i<this.model.edges.length;i+=kind==='brain'&&this.camera.d>5?6:3){const e=this.model.edges[i];if(e.kind!==kind)continue;const a=pts[e.a],b=pts[e.b];if(!a||!b||Math.abs(a.x-b.x)>w*1.5||Math.abs(a.y-b.y)>h*1.5)continue;ctx.moveTo(a.x,a.y);ctx.lineTo(b.x,b.y)}
+      ctx.lineWidth=kind==='brain'?.55:.85;ctx.strokeStyle=kind==='brain'?['rgba(192,219,207,.145)','rgba(177,219,212,.185)','rgba(220,225,208,.21)'][group]:['rgba(181,209,193,.38)','rgba(156,200,185,.33)','rgba(213,226,201,.42)'][group];ctx.stroke();
+    }
+    ctx.fillStyle='rgba(223,233,214,.44)';ctx.beginPath();
+    for(let i=0;i<pts.length;i++){
+      const p=pts[i];if(!p||p.x<0||p.x>w||p.y<0||p.y>h)continue;
+      if(i%3===0||this.camera.d<.8){const r=clamp(.34/p.depth,.38,1.55);ctx.moveTo(p.x+r,p.y);ctx.arc(p.x,p.y,r,0,Math.PI*2)}
+    }ctx.fill();
+    if(time>=58||time===7||this.reduced){const b=this.baseCanvas.getContext('2d');b.globalCompositeOperation='copy';b.drawImage(this.canvas,0,0);this.baseCache={key:cacheKey,points:pts};}
+    }
+    // Quiet spontaneous local signals, never a global neon flash.
+    if(!this.reduced){for(let j=0;j<9;j++){
+      const n=pts[(Math.floor(clock*.16)+j*101+91)%921];if(n&&n.x>-20&&n.x<w+20&&n.y>-20&&n.y<h+20){const alpha=(Math.sin(clock*(.55+j*.07)+j*2.3)+1)*.13;this.glow(n.x,n.y,clamp(5/n.depth,3,12),alpha)}}}
+    // Ambient traffic along the real graph paths (afferent up, efferent down).
+    const flow=opts.flow||0;
+    if(flow>0){
+      ctx.save();ctx.globalCompositeOperation='lighter';
+      for(let f=0;f<this.flows.length;f++){
+        const fl=this.flows[f];
+        for(let k=0;k<3;k++){
+          const up=(k%2===0),speed=this.reduced?0:.11+f*.012,phase=((clock*speed+fl.seed+k/3)%1+1)%1,d=(up?phase:1-phase)*fl.total;
+          const q=this.project(this.pathPoint(fl.path,fl.distances,d));if(!q)continue;
+          const fade=Math.sin(phase*Math.PI);
+          const tail=this.project(this.pathPoint(fl.path,fl.distances,Math.max(0,Math.min(fl.total,d+(up?-.22:.22)))));
+          if(tail){ctx.beginPath();ctx.moveTo(tail.x,tail.y);ctx.lineTo(q.x,q.y);ctx.strokeStyle=up?`rgba(240,223,184,${.5*fade*flow})`:`rgba(143,199,184,${.5*fade*flow})`;ctx.lineWidth=1.2;ctx.stroke()}
+          this.glow(q.x,q.y,5,.55*fade*flow,up?null:'143,199,184');
+        }
+      }
+      ctx.restore();
+    }
+    // A wave of light from the brain through every nerve: one signal, one system.
+    const liveWaves=[];
+    for(const wv of this.waves){
+      const age=clock-wv.start,speed=2.6,front=age*speed,band=.9;
+      if(front-band>this.maxDist)continue;liveWaves.push(wv);
+      const buckets=[[],[],[]];
+      for(const e of this.model.edges){
+        const d=Math.max(this.rootDist[e.a],this.rootDist[e.b]),lag=front-d;
+        if(lag<0||lag>band)continue;buckets[Math.min(2,Math.floor(lag/band*3))].push(e);
+      }
+      ctx.save();ctx.globalCompositeOperation='lighter';
+      buckets.forEach((list,bi)=>{
+        if(!list.length)return;ctx.beginPath();
+        for(const e of list){const a=pts[e.a],b=pts[e.b];if(!a||!b||Math.abs(a.x-b.x)>w||Math.abs(a.y-b.y)>h)continue;ctx.moveTo(a.x,a.y);ctx.lineTo(b.x,b.y)}
+        ctx.strokeStyle=`rgba(244,228,190,${[.85,.5,.22][bi]*wv.strength})`;ctx.lineWidth=[1.6,1.2,.9][bi];ctx.stroke();
+      });
+      ctx.restore();
+    }this.waves=liveWaves;
+    const keep=[];
+    for(const pulse of this.pulses){
+      const age=clock-pulse.start;if(age>pulse.duration+2.3)continue;keep.push(pulse);
+      const source=pts[pulse.source];if(source&&age<1.2){ctx.beginPath();ctx.arc(source.x,source.y,4+age*19,0,Math.PI*2);ctx.strokeStyle=`rgba(221,203,168,${.45*(1-age/1.2)})`;ctx.lineWidth=.65;ctx.stroke()}
+      if(age<=pulse.duration){
+        // Trail and leading particle both follow the same graph path.
+        ctx.beginPath();for(let j=14;j>=0;j--){const p=this.project(this.signalPosition(pulse,Math.max(0,age-j*.028)));if(p){if(j===14)ctx.moveTo(p.x,p.y);else ctx.lineTo(p.x,p.y)}}ctx.strokeStyle='rgba(231,214,174,.85)';ctx.lineWidth=1.65;ctx.stroke();
+        const p=this.project(this.signalPosition(pulse,age));if(p)this.glow(p.x,p.y,9,.9);
+      }else{
+        if(!pulse.waved){pulse.waved=true;this.wave(.55)}
+        const after=age-pulse.duration,root=pts[this.model.root];if(root)this.glow(root.x,root.y,9+after*7,.35*Math.max(0,1-after/2.3));
+        const down=pulse.returnPath;
+        const at=Math.min(down.length-1,Math.floor(after/2.3*down.length));const p=pts[down[at]];if(p)this.glow(p.x,p.y,7,.35*(1-after/2.3));
+      }
+    }this.pulses=keep;
+    this.pointsAlpha=opts.points||0;
+  }
+  glow(x,y,r,alpha,tint=null){const ctx=this.ctx,g=ctx.createRadialGradient(x,y,0,x,y,r);g.addColorStop(0,tint?`rgba(214,244,234,${alpha})`:`rgba(255,239,202,${alpha})`);g.addColorStop(.2,tint?`rgba(${tint},${alpha*.46})`:`rgba(230,211,172,${alpha*.46})`);g.addColorStop(1,tint?`rgba(${tint},0)`:'rgba(221,203,168,0)');ctx.fillStyle=g;ctx.fillRect(x-r,y-r,r*2,r*2)}
+}
+
+return {DURATION,CAMERA_DURATION,buildModel,shortestPath,cameraAt,UniverseScene};
+})();
+const {STRAIN_DURATION,strainLevel,strainPhase,STRAIN_STORY,StrainLayer} = (()=>{
+const STRAIN_DURATION=25;
+const clamp=x=>Math.max(0,Math.min(1,x));
+const strainLevel=t=>clamp((t-4)/17);
+const strainPhase=t=>t<5?0:t<11?1:t<19?2:3;
+const STRAIN_STORY=[
+  ['THE RHYTHM','서로 다른 리듬,<br><em>하나의 몸.</em>','교감과 부교감. 상황에 맞춰 반응하는 두 흐름.'],
+  ['THE STRAIN','긴장이 오래<br><em>머무를 때.</em>','동원되는 시간이 길어지고, 쉬어가는 리듬이 흐트러집니다.'],
+  ['THE CONNECTION','한곳의 이야기가<br><em>아닐 수 있습니다.</em>','신경망이 조절하는 여러 기능에 부담이 나타날 수 있습니다.'],
+  ['THE WHOLE','몸은 함께<br><em>신호를 보냅니다.</em>','두근거림 · 소화 불편 · 근육 긴장 · 두통과 수면 문제.']
+];
+class StrainLayer{
+  constructor(scene){
+    this.scene=scene;
+    const near=(x,y,z)=>scene.model.nodes.reduce((a,b)=>Math.hypot(a.x-x,a.y-y,a.z-z)<Math.hypot(b.x-x,b.y-y,b.z-z)?a:b).id;
+    this.organs=[
+      {key:'head',name:'머리',label:'두통 · 수면',x:0,y:3.1,z:.1,onset:12,side:1,description:'두통·수면 문제는 장기 스트레스와 함께 나타나거나 악화될 수 있어요.'},
+      {key:'heart',name:'심장',label:'두근거림',x:.24,y:1.68,z:.2,onset:15,side:1,description:'긴장 반응으로 심박이 빨라지거나 두근거림을 느낄 수 있어요.'},
+      {key:'gut',name:'배',label:'소화 불편',x:0,y:.45,z:.22,onset:18,side:1,description:'장기 스트레스는 소화 기능과 복부 불편에 영향을 줄 수 있어요.'},
+      {key:'shoulder',name:'어깨',label:'근육 긴장',x:-.68,y:2.08,z:.08,onset:20,side:-1,description:'근육의 긴장이 오래 지속되면 뻐근함이나 통증을 느낄 수 있어요.'}
+    ];
+    for(const o of this.organs){o.id=near(o.x,o.y,o.z);o.path=shortestPath(scene.model,o.id).reverse()}
+    this.paths=['left-hand','right-hand','left-foot','right-foot','chest'].map(k=>shortestPath(scene.model,scene.model.regions[k]).reverse());
+    this.selected=null;
+  }
+  hit(x,y){let best=null,d=35;for(const o of this.organs){const p=this.scene.project(o);if(!p)continue;const delta=Math.hypot(p.x-x,p.y-y);if(delta<d){d=delta;best=o}}return best}
+  draw(t,clock){
+    const s=this.scene,c=s.ctx,level=strainLevel(t),motion=s.reduced?0:clock;
+    // These colors convey functional rhythms, not anatomical divisions or measured values.
+    const amber='226,151,109',teal='129,198,184';
+    c.save();
+    for(let j=0;j<this.paths.length;j++){
+      const path=this.paths[j];
+      for(let channel=0;channel<2;channel++){
+        const pace=channel===0?.12+level*.17:.12-level*.035;
+        const phase=(motion*pace+j*.19+channel*.41)%1;
+        const amplitude=channel===0?.18+level*.56:.38-level*.25;
+        c.beginPath();let started=false;
+        for(let i=0;i<path.length;i++){
+          const p=s.project(s.model.nodes[path[i]]);if(!p){started=false;continue}
+          const x=p.x+(channel===0?1.2:-1.2);if(!started){c.moveTo(x,p.y);started=true}else c.lineTo(x,p.y);
+        }
+        c.strokeStyle=`rgba(${channel===0?amber:teal},${amplitude*.44})`;c.lineWidth=channel===0?1.15:1;c.stroke();
+        const idx=Math.floor(phase*(path.length-1));
+        const p=s.project(s.model.nodes[path[idx]]);
+        if(p){const radius=channel===0?6+level*4:6;this.halo(p.x,p.y,radius,channel===0?amber:teal,amplitude)}
+      }
+    }
+    // Close-up: asynchronous warm currents travel on existing neural edges.
+    c.beginPath();
+    for(let i=0;i<s.model.edges.length;i+=5){
+      const e=s.model.edges[i];if(e.kind!=='brain')continue;
+      const wave=(Math.sin(motion*.9+i*.23)+1)/2;
+      if(wave<.62||level===0)continue;
+      const a=s.project(s.model.nodes[e.a]),b=s.project(s.model.nodes[e.b]);
+      if(!a||!b||Math.abs(a.x-b.x)>s.width)continue;c.moveTo(a.x,a.y);c.lineTo(b.x,b.y);
+    }
+    c.strokeStyle=`rgba(${amber},${level*.48})`;c.lineWidth=.9;c.stroke();
+    // A slow wave of strain reaches connected regions without breaking their edges.
+    c.beginPath();
+    const front=3.4-level*7;
+    for(const e of s.model.edges){
+      if(e.kind==='brain')continue;
+      const a0=s.model.nodes[e.a],b0=s.model.nodes[e.b];
+      if((a0.y+b0.y)/2<front)continue;
+      const a=s.project(a0),b=s.project(b0);if(!a||!b)continue;
+      c.moveTo(a.x,a.y);c.lineTo(b.x,b.y);
+    }
+    c.strokeStyle=`rgba(205,128,98,${level*.58})`;c.lineWidth=1.15;c.stroke();
+    for(const o of this.organs){
+      const strength=clamp((t-o.onset)/3);if(strength<=0)continue;
+      const p=s.project(o);if(!p)continue;
+      const breath=.82+.18*Math.sin(motion*1.25+o.onset);
+      const radius=Math.min(65,Math.max(15,s.height*.047));
+      this.halo(p.x,p.y,radius,amber,strength*.32*breath);
+      c.beginPath();c.arc(p.x,p.y,5+breath*2,0,Math.PI*2);c.strokeStyle=`rgba(${amber},${strength*.7})`;c.lineWidth=.8;c.stroke();
+      if(t>=21){
+        const small=s.width<=700;const offset=small?58:80;
+        const endX=p.x+o.side*offset;
+        c.beginPath();c.moveTo(p.x+o.side*10,p.y);c.lineTo(endX,p.y-8);c.strokeStyle=`rgba(${amber},.35)`;c.lineWidth=.6;c.stroke();
+        c.font=`${small?10:11}px Arial, sans-serif`;c.textAlign=o.side>0?'left':'right';c.fillStyle=`rgba(231,192,164,${strength*.95})`;
+        c.fillText(o.label,endX+o.side*4,p.y-10);
+      }
+    }
+    c.restore();
+  }
+  halo(x,y,r,color,alpha){const c=this.scene.ctx,g=c.createRadialGradient(x,y,0,x,y,r);g.addColorStop(0,`rgba(${color},${alpha})`);g.addColorStop(.35,`rgba(${color},${alpha*.4})`);g.addColorStop(1,`rgba(${color},0)`);c.fillStyle=g;c.fillRect(x-r,y-r,r*2,r*2)}
+}
+
+return {STRAIN_DURATION,strainLevel,strainPhase,STRAIN_STORY,StrainLayer};
+})();
+const $=id=>document.getElementById(id),shell=$('experience'),canvas=$('universe');
+// ── 링크 설정: 주소가 바뀌면 여기만 고치면 돼요. 빈 문자열이면 해당 링크가 숨겨져요.
+const LINKS={check:'https://bium-check.vercel.app',diary:'https://safediary1111.vercel.app',hub:''};
+[['cta-main','check'],['cta-diary','diary'],['cta-hub','hub']].forEach(([id,key])=>{const a=$(id);if(LINKS[key])a.href=LINKS[key];else a.hidden=true});
+let scene;
+try{scene=new UniverseScene(canvas)}catch(error){$('fallback').hidden=false;console.error(error)}
+if(scene){
+  let state='intro',elapsed=0,last=null,clock=0,chapter=-1,soundOn=false,frameId=null;
+  const reduced=matchMedia('(prefers-reduced-motion: reduce)');scene.reduced=reduced.matches;
+  let audio=null,mode='whole',waveFired=false,exploreAt=0;const clamp01=x=>Math.max(0,Math.min(1,x));
+  const strain=new StrainLayer(scene);
+  const duration=()=>mode==='strain'?STRAIN_DURATION:DURATION;
+  const fmt=t=>`${Math.floor(t/60).toString().padStart(2,'0')}:${Math.floor(t%60).toString().padStart(2,'0')}`;
+  class Soundscape{
+    constructor(){
+      const AC=window.AudioContext||window.webkitAudioContext;if(!AC)return;
+      this.ctx=new AC();this.master=this.ctx.createGain();this.master.gain.value=0;this.master.connect(this.ctx.destination);this.osc=[];
+      [110,164.81,220.15].forEach((freq,i)=>{const osc=this.ctx.createOscillator(),gain=this.ctx.createGain();osc.type='sine';osc.frequency.value=freq;gain.gain.value=[.12,.035,.018][i];osc.connect(gain).connect(this.master);osc.start();this.osc.push(osc)});
+    }
+    async resume(){try{await this.ctx?.resume()}catch{}}
+    update(t,enabled){if(!this.ctx)return;const envelope=t<53?.07+Math.sin(Math.min(1,t/50)*Math.PI/2)*.075:.145*Math.max(0,(70-t)/17);this.master.gain.setTargetAtTime(enabled?envelope:0,this.ctx.currentTime,.5)}
+    ping(){if(!this.ctx||!soundOn)return;const o=this.ctx.createOscillator(),g=this.ctx.createGain(),now=this.ctx.currentTime;o.frequency.setValueAtTime(440,now);o.frequency.exponentialRampToValueAtTime(220,now+.8);g.gain.setValueAtTime(0,now);g.gain.linearRampToValueAtTime(.026,now+.025);g.gain.exponentialRampToValueAtTime(.0001,now+1);o.connect(g).connect(this.ctx.destination);o.start(now);o.stop(now+1)}
+  }
+  function setState(next){state=next;shell.dataset.state=next;$('intro').inert=next!=='intro';$('transport').hidden=!['playing','paused'].includes(next);$('explore').hidden=next!=='exploring';$('duration').hidden=next!=='intro';$('pause').textContent=next==='paused'?'계속 보기 ▶':'일시정지 Ⅱ';$('pause').setAttribute('aria-label',next==='paused'?'계속 재생':'일시정지');}
+  function announce(text){$('announcer').textContent=text}
+  function updateNarrative(){
+    if(mode==='strain'){
+      const phase=strainPhase(elapsed),story=STRAIN_STORY[phase];
+      if(chapter!==phase){chapter=phase;announce(story[2]);}
+      $('chapter-index').textContent=String(phase+1).padStart(2,'0');$('chapter-name').textContent=story[0];
+      $('reveal-eyebrow').textContent=story[0];$('statement').innerHTML=story[1];$('reveal-copy').textContent=story[2];
+      $('revelation').style.opacity=state==='intro'?'0':'1';
+      $('progress-fill').style.width=(elapsed/duration()*100)+'%';$('time').textContent=fmt(elapsed)+' / '+fmt(duration());
+      return;
+    }
+    const narrative=elapsed/DURATION*CAMERA_DURATION;
+    const phase=narrative<25?0:narrative<43?1:narrative<58?2:3;
+    if(phase!==chapter){chapter=phase;$('chapter-index').textContent=String(Math.min(3,phase+1)).padStart(2,'0');$('chapter-name').textContent=['THE CONNECTION','THE MIND','THE WHOLE','WITHIN'][phase];if(state!=='intro')announce(['하나의 신경 연결망 안으로 들어갑니다.','카메라가 멀어지며 인간의 뇌가 드러납니다.','뇌에서 척수와 말초신경으로 이어진 전신이 드러납니다.','당신은 하나의 연결된 시스템입니다.'][phase]);}
+    const final=narrative>=63;
+    $('reveal-eyebrow').textContent=final?'YOU ARE A SYSTEM.':'ONE SIGNAL. ONE SYSTEM.';
+    $('statement').innerHTML=final?'불안은 성격이 아니었어요.<br><em>연결된 몸의 신호였어요.</em>':'당신은 조각이<br><em>아니에요.</em>';
+    $('reveal-copy').textContent=final?'손끝의 감각도, 가슴의 두근거림도 같은 연결망 위에 있어요.':'뇌에서 손끝까지, 모든 순간은 서로 이어져 있어요.';
+    $('revelation').style.opacity=narrative>=58?'1':'0';
+    $('progress-fill').style.width=(elapsed/DURATION*100)+'%';
+    $('time').textContent=fmt(elapsed)+' / '+fmt(DURATION);
+  }
+  function finish({focus=false}={}){elapsed=duration();setState('exploring');exploreAt=clock;if(mode==='whole'&&!waveFired&&!reduced.matches){waveFired=true;scene.wave(1)}updateNarrative();announce(mode==='strain'?'신체 또는 머리·심장·배·어깨 버튼으로 각 부위를 살펴보세요.':'신체의 한 지점을 터치하거나, 왼손·가슴·오른발 버튼으로 연결망을 탐색하세요.');if(focus)document.querySelector(mode==='strain'?'[data-organ="head"]':'#points-open').focus();audio?.update(CAMERA_DURATION,false);$('interaction-status').textContent=mode==='strain'?'신체 또는 아래 부위를 눌러 살펴보세요':'금빛 숫자를 누르면 신경이 지나는 길이 보여요'}
+  async function start(){elapsed=0;chapter=-1;scene.pulses=[];scene.waves=[];waveFired=false;clearTimeout(signal.timeout);$('touch-label').style.opacity='0';setState('playing');updateNarrative();if(soundOn){audio??=new Soundscape();await audio.resume()}$('pause').focus();last=null;}
+  function signal(id,label='신호가 척수를 따라 뇌로 이어지고 있어요'){
+    if(state!=='exploring')return;
+    if(scene.sendSignal(id)){$('interaction-status').textContent=label;announce(label);audio?.ping();const p=scene.project(scene.model.nodes[id]);if(p){$('touch-label').style.left=p.x+'px';$('touch-label').style.top=Math.min(scene.height-135,p.y+24)+'px';$('touch-label').style.opacity='1';}clearTimeout(signal.timeout);signal.timeout=setTimeout(()=>{$('interaction-status').textContent='다른 지점도 천천히 터치해 보세요';$('touch-label').style.opacity='0'},4500)}
+  }
+  $('start').addEventListener('click',()=>{if(reduced.matches){finish({focus:true});return}start()});
+  $('direct').addEventListener('click',()=>finish({focus:true}));
+  $('skip').addEventListener('click',()=>finish({focus:true}));
+  $('replay').addEventListener('click',()=>{clearTimeout(signal.timeout);$('touch-label').style.opacity=0;if(reduced.matches){elapsed=duration();scene.pulses=[];finish({focus:true})}else start()});
+  $('pause').addEventListener('click',()=>{if(state==='playing'){setState('paused');announce('경험을 일시정지했습니다.');audio?.update(elapsed,false)}else if(state==='paused'){setState('playing');last=null;announce('경험을 계속합니다.')}});
+  $('sound').addEventListener('click',async()=>{soundOn=!soundOn;if(soundOn){audio??=new Soundscape();await audio.resume();if(!audio.ctx){soundOn=false;announce('이 브라우저에서는 소리를 사용할 수 없습니다.')}}$('sound').setAttribute('aria-pressed',String(soundOn));$('sound').setAttribute('aria-label',soundOn?'소리 끄기':'소리 켜기');audio?.update(elapsed/duration()*CAMERA_DURATION,soundOn&&state==='playing')});
+  canvas.addEventListener('pointerdown',event=>{if(state!=='exploring'||(event.pointerType==='mouse'&&event.button!==0))return;const rect=canvas.getBoundingClientRect(),x=event.clientX-rect.left,y=event.clientY-rect.top;if(mode==='whole'){const hp=scene.hitHot(x,y);if(hp>=0){openPoint(hp);return}}const id=scene.hitTest(x,y);const organ=mode==='strain'?strain.hit(x,y):null;if(organ){selectOrgan(organ);return}if(id!==null)signal(id,mode==='strain'?'여러 부위의 기능은 연결망을 통해 함께 조절됩니다.':undefined);else{$('interaction-status').textContent='빛나는 신경망 가까이를 터치해 보세요';announce('빛나는 신경망 가까이를 터치해 보세요.')}});
+  document.querySelectorAll('[data-region]').forEach(button=>button.addEventListener('click',()=>signal(scene.model.regions[button.dataset.region],button.textContent+'에서 시작된 신호가 뇌로 이어지고 있어요')));
+  document.addEventListener('keydown',event=>{if(event.code==='Space'&&event.target===document.body&&['playing','paused'].includes(state)){event.preventDefault();$('pause').click()}});
+  document.addEventListener('visibilitychange',()=>{last=null;if(document.hidden){cancelAnimationFrame(frameId);frameId=null;audio?.update(elapsed,false)}else if(frameId===null){frameId=requestAnimationFrame(tick);audio?.resume()}});
+  let resizeTimer;const onResize=()=>{clearTimeout(resizeTimer);resizeTimer=setTimeout(()=>scene.syncSize(),80)};window.addEventListener('resize',onResize);if('ResizeObserver' in window)new ResizeObserver(onResize).observe(canvas);
+  reduced.addEventListener('change',()=>{scene.reduced=reduced.matches;if(reduced.matches&&['playing','paused'].includes(state))finish({focus:true});updateStartLabel()});
+  function updateStartLabel(){$('start').querySelector('span').textContent=reduced.matches?'연결망 탐색하기':'경험 시작하기';$('intro-note').textContent=reduced.matches?'동작 줄이기 설정에 맞춰, 고요한 전신 장면으로 시작해요.':'천천히 바라보세요. 마지막에는 당신의 손끝으로.'}
+  function selectOrgan(organ){signal(organ.id,organ.description);$('touch-label').textContent=organ.name+' · '+organ.label;}
+  document.querySelectorAll('[data-organ]').forEach(button=>button.addEventListener('click',()=>selectOrgan(strain.organs.find(o=>o.key===button.dataset.organ))));
+  function selectMode(next){
+    closePoint();mode=next;elapsed=0;clock=0;last=null;chapter=-1;scene.pulses=[];scene.waves=[];waveFired=false;scene.baseCache=null;
+    clearTimeout(signal.timeout);$('touch-label').style.opacity='0';$('touch-label').textContent='손끝에서 시작된 하나의 신호';
+    shell.dataset.mode=mode;setState('intro');audio?.update(0,false);
+    $('mode-whole').setAttribute('aria-pressed',String(mode==='whole'));$('mode-strain').setAttribute('aria-pressed',String(mode==='strain'));
+    $('intro-title').innerHTML=mode==='strain'?'균형이<br><em>흔들릴 때.</em>':'성격이 아니라,<br><em>신경계였어요.</em>';
+    $('intro-eyebrow').textContent=mode==='strain'?'A SYSTEM UNDER STRAIN':'THE UNIVERSE WITHIN';
+    $('intro-copy').innerHTML=mode==='strain'?'긴장이 오래 머물면, 몸은 어떻게 반응할까요.<br>연결된 몸의 변화를 만나는 25초.':'따로따로인 것 같던 마음과 몸은<br><b>하나로 이어진 시스템</b>이에요. 그 연결을 만나는 35초.';
+    $('duration').textContent=mode==='strain'?'25 SECONDS · SHIFTING RHYTHMS':'35 SECONDS · ONE UNIVERSE';
+    $('rhythm-key').hidden=mode!=='strain';$('whole-choices').hidden=mode==='strain';$('strain-choices').hidden=mode!=='strain';
+    $('revelation').style.opacity='0';updateStartLabel();announce(mode==='strain'?'균형이 흔들릴 때. 25초 경험을 시작할 수 있습니다.':'하나로 연결된 나. 35초 경험을 시작할 수 있습니다.');
+  }
+  // Key points: card + linked path on the canvas.
+  let pointIndex=-1;
+  function openPoint(i,{focus=false}={}){
+    pointIndex=(i+scene.hot.length)%scene.hot.length;const h=scene.hot[pointIndex];scene.select(pointIndex);
+    scene.liftTarget=scene.width<=700?1:0;shell.dataset.point='open';
+    $('pc-num').textContent=String(pointIndex+1).padStart(2,'0')+' / '+String(scene.hot.length).padStart(2,'0');
+    $('pc-title').textContent=h.title;$('pc-nerve').textContent='지나가는 신경 · '+h.nerve;$('pc-body').textContent=h.body;
+    $('pc-link').textContent=h.link;$('pc-try').textContent=h.try;$('pc-trad').textContent=h.trad;
+    const card=$('point-card');card.hidden=false;card.scrollTop=0;announce(h.title+'. '+h.body);
+    if(focus)$('pc-close').focus({preventScroll:true});
+  }
+  function closePoint({focus=false}={}){
+    if(pointIndex<0&&$('point-card').hidden)return;pointIndex=-1;scene.select(-1);scene.liftTarget=0;delete shell.dataset.point;$('point-card').hidden=true;
+    if(focus)$('points-open').focus({preventScroll:true});
+  }
+  $('points-open').addEventListener('click',()=>openPoint(pointIndex>=0?pointIndex:0,{focus:true}));
+  $('pc-close').addEventListener('click',()=>closePoint({focus:true}));
+  $('pc-prev').addEventListener('click',()=>openPoint(pointIndex-1));
+  $('pc-next').addEventListener('click',()=>openPoint(pointIndex+1));
+  document.addEventListener('keydown',e=>{if(pointIndex<0)return;if(e.key==='Escape')closePoint({focus:true});else if(e.key==='ArrowRight')openPoint(pointIndex+1);else if(e.key==='ArrowLeft')openPoint(pointIndex-1)});
+  $('replay').addEventListener('click',()=>closePoint());
+  $('mode-whole').addEventListener('click',()=>selectMode('whole'));
+  $('mode-strain').addEventListener('click',()=>selectMode('strain'));
+  $('about').addEventListener('click',()=>{if(state==='playing')$('pause').click();$('explanation').showModal()});
+  $('close-about').addEventListener('click',()=>$('explanation').close());
+  updateStartLabel();
+  function tick(now){
+    try{frame(now)}catch(error){console.warn('BIUM frame skipped:',error)}
+    frameId=requestAnimationFrame(tick);
+  }
+  function frame(now){
+    const dt=last===null?0:Math.min(.25,(now-last)/1000);last=now;
+    if(state==='playing'){elapsed=Math.min(duration(),elapsed+dt);if(elapsed>=duration())finish();updateNarrative();audio?.update(elapsed/duration()*CAMERA_DURATION,soundOn)}
+    if(state!=='paused')clock+=dt;
+    if(mode==='strain'){
+      const t=state==='intro'?2:elapsed,mapped=t/STRAIN_DURATION*CAMERA_DURATION;
+      const camera=cameraAt(mapped,scene.width,scene.height);
+      scene.render(mapped,clock,camera);strain.draw(t,clock);scene.bloom(.8);
+    }else{
+      const nt=state==='intro'?7:elapsed/DURATION*CAMERA_DURATION;
+      if(state==='playing'&&!waveFired&&nt>=55){waveFired=true;scene.wave(1)}
+      const flow=reduced.matches?0:state==='intro'?.55:state==='exploring'?1:clamp01((nt-36)/16);
+      const points=state==='exploring'?(reduced.matches?1:clamp01((clock-exploreAt-.9)/1.2)):0;
+      scene.render(nt,clock,null,{flow,points});scene.bloom(1);scene.drawHotspots();
+    }
+  }
+  frameId=requestAnimationFrame(tick);
+}
+
+})();
+</script>
+</body>
+</html>
